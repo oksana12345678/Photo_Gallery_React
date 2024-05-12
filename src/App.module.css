@@ -1,0 +1,44 @@
+@media screen and (min-width: 320px) {
+  .topLine {
+    padding: 0 8px;
+    background: linear-gradient(to right, #233942 50%, #0d0f11 50%);
+    width: 320px;
+    height: 40px;
+  }
+  .hederWrapper {
+    height: 100%;
+    backdrop-filter: blur(30px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .heroSection {
+    background-image: url(./img/noah-PhotoRoom.png),
+      linear-gradient(to right, #233942 50%, #0d0f11 50%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    padding: 0 24px;
+    background-position-x: center;
+    background-position-y: bottom;
+  }
+  @media (min-resolution: 192dpi) {
+    .heroSection {
+      background-image: url(./img/noah-PhotoRoom2x.png),
+        linear-gradient(to right, #233942 50%, #0d0f11 50%);
+      display: flex;
+    }
+  }
+   /* About Us */
+  .aboutUs {
+    background: rgb(13, 15, 17);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .topLine {
+    padding: 0 120px;
+  }
+}

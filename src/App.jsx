@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Logo from "./components/Header/Logo/Logo";
+import MenuNavigation from "./components/Header/MenuNavigation/MenuNavigation";
+import css from "./App.module.css";
+import HeroContent from "./components/Hero/HeroContent/HeroContent";
+import SocialMedia from "./components/Hero/SocialMedia/SocialMedia";
+import HeroButton from "./components/Hero/HeroButton/HeroButton";
+import TitleAndDesc from "./components/AboutUs/TitleAndDesc/TitleAndDesc";
+import DescList from "./components/AboutUs/DescList/DescList";
+import { useState, useEffect } from "react";
+import fetchImages from "./components/fetchImages/fetchImages";
+import PhotoGallery from "./components/AboutUs/PhotoGallery/PhotoGallery";
+export default function App() {
+  const [images, setImages] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-function App() {
-  const [count, setCount] = useState(0)
-
+  useEffect(() => {
+    const imageSearch = async () => {
+      const data = await fetchImages(searchTerm);
+      console.log(data);
+      setImages(data);
+      setSearchTerm(searchTerm);
+      console.log(data);
+    };
+    imageSearch();
+  }, [setImages, searchTerm]);
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header className={css.topLine}>
+        <div className={css.hederWrapper}>
+          <Logo />
+          <MenuNavigation />
+        </div>
+      </header>
+      <main>
+        <section className={css.heroSection}>
+          <div>
+            <HeroContent />
+            <HeroButton />
+          </div>
+          <SocialMedia />
+        </section>
+        <section className={css.aboutUs}>
+          <TitleAndDesc />
+          <DescList />
+          <PhotoGallery items={images} />
+        </section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </main>
+      <footer></footer>
     </>
-  )
+  );
 }
-
-export default App

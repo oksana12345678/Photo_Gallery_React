@@ -1,0 +1,22 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+  gap: 16px;
+}
+.title {
+  text-transform: uppercase;
+  font-family: Cormorant;
+  font-weight: 400;
+  font-size: 28px;
+  color: rgb(255, 255, 255);
+  width: 94px;
+  margin-top: 60px;
+}
+.desc {
+  color: rgb(137, 141, 146);
+  font-weight: 400;
+  font-size: 16px;
+  width: 190px;
+  margin-left: 52px;
+}
