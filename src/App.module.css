@@ -31,10 +31,20 @@
       display: flex;
     }
   }
-   /* About Us */
-  .aboutUs {
+  /* About Us */
+  .aboutUs,
+  .whyMe,
+  .portfolio {
     background: rgb(13, 15, 17);
+    padding: 0 16px;
+    padding-bottom: 80px;
   }
+  /* .portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  } */
+
 }
 
 @media screen and (min-width: 1440px) {

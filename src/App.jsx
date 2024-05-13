@@ -9,20 +9,30 @@ import DescList from "./components/AboutUs/DescList/DescList";
 import { useState, useEffect } from "react";
 import fetchImages from "./components/fetchImages/fetchImages";
 import PhotoGallery from "./components/AboutUs/PhotoGallery/PhotoGallery";
+import BenefitsList from "./components/WhyMe/BenefitsList/BenefitsList";
+import WhyTitleAndDesc from "./components/WhyMe/WhyTitleAndDesc/WhyTitleAndDesc";
+import PortfolioPhotoGallery from "./components/Portfolio/PortfolioPhotoGallery/PortfolioPhotoGallery";
+import Title from "./components/Portfolio/Title/Title";
 export default function App() {
   const [images, setImages] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("wedding");
 
   useEffect(() => {
     const imageSearch = async () => {
-      const data = await fetchImages(searchTerm);
-      console.log(data);
-      setImages(data);
-      setSearchTerm(searchTerm);
-      console.log(data);
+      try {
+        setError(false);
+        const data = await fetchImages(searchTerm);
+        console.log(data);
+        setImages(data.results);
+        console.log(data);
+      } catch (error) {
+        setError(true);
+      }
     };
     imageSearch();
   }, [setImages, searchTerm]);
+
   return (
     <>
       <header className={css.topLine}>
@@ -44,8 +54,14 @@ export default function App() {
           <DescList />
           <PhotoGallery items={images} />
         </section>
-        <section></section>
-        <section></section>
+        <section className={css.portfolio}>
+          <Title />
+          <PortfolioPhotoGallery swiperId="swiperTwo" items={images} />
+        </section>
+        <section className={css.whyMe}>
+          <WhyTitleAndDesc />
+          <BenefitsList />
+        </section>
         <section></section>
       </main>
       <footer></footer>

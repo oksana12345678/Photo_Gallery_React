@@ -1,0 +1,19 @@
+.list {
+  background-color: black;
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+  gap: 8px;
+}
+/* .listItem {
+} */
+.button {
+  color: rgb(137, 141, 146);
+  text-transform: capitalize;
+  background-color: transparent;
+  border: none;
+}
+.button:active {
+  color: rgb(255, 255, 255);
+}

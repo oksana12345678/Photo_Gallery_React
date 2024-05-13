@@ -1,0 +1,21 @@
+.slides {
+  position: relative;
+}
+
+.button {
+  position: absolute;
+  background-color: #77737378;
+  border: none;
+  top: 70%;
+  right: 50%;
+  z-index: 999999;
+  color: aliceblue;
+  text-transform: capitalize;
+  height: 50px;
+  width: 140px;
+}
+.item {
+  color: aliceblue;
+  width: 100px;
+  height: 40px;
+}

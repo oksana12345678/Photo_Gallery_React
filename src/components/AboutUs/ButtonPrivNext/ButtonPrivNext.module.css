@@ -1,0 +1,24 @@
+@media screen and (min-width: 320px) {
+  .buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .icon {
+    color: #fafafa;
+  }
+  .buttonArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    border-radius: 100%;
+    border: 1px solid #fafafa;
+    width: 24px;
+    height: 24px;
+  }
+  .end{border: 1px solid #727171;}
+}
