@@ -4,18 +4,19 @@
 
 .button {
   position: absolute;
-  background-color: #77737378;
+  backdrop-filter: blur(8px);
+  background: rgba(102, 102, 102, 0.21);
   border: none;
   top: 70%;
   right: 50%;
   z-index: 999999;
-  color: aliceblue;
+  color: rgb(255, 255, 255);
   text-transform: capitalize;
   height: 50px;
   width: 140px;
 }
 .item {
-  color: aliceblue;
+  color: rgb(255, 255, 255);
   width: 100px;
   height: 40px;
 }

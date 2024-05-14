@@ -16,7 +16,7 @@ const PhotoGallery = ({ swiperId }) => {
   const [searchTerm, setSearchTerm] = useState("all");
 
   useEffect(() => {
-    const imageSearch = async () => {
+    const itemSearch = async () => {
       try {
         const data = await fetchImages(searchTerm);
         console.log(data);
@@ -26,7 +26,7 @@ const PhotoGallery = ({ swiperId }) => {
         setError(true);
       }
     };
-    imageSearch();
+    itemSearch();
   }, [setItems, searchTerm]);
 
   const handleSwiperInit = (swiperInst) => {

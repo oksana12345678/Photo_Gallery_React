@@ -13,10 +13,14 @@ import BenefitsList from "./components/WhyMe/BenefitsList/BenefitsList";
 import WhyTitleAndDesc from "./components/WhyMe/WhyTitleAndDesc/WhyTitleAndDesc";
 import PortfolioPhotoGallery from "./components/Portfolio/PortfolioPhotoGallery/PortfolioPhotoGallery";
 import Title from "./components/Portfolio/Title/Title";
+import TestimonialsTitle from "./components/Testimonials/TestimonialsTitle/TestimonialsTitle";
+import fetchReviews from "./components/fetchReviews/fetchReviews";
+import ListOfReviews from "./components/Testimonials/ListOfReviews/ListOfReviews";
 export default function App() {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("wedding");
+  const [reviews, setReviews] = useState();
 
   useEffect(() => {
     const imageSearch = async () => {
@@ -32,6 +36,20 @@ export default function App() {
     };
     imageSearch();
   }, [setImages, searchTerm]);
+
+  useEffect(() => {
+    const getReviews = async () => {
+      try {
+        setError(false);
+        const data = await fetchReviews();
+        setReviews(data.results);
+        console.log(data);
+      } catch (error) {
+        setError(true);
+      }
+    };
+    getReviews();
+  }, [setReviews]);
 
   return (
     <>
@@ -61,6 +79,10 @@ export default function App() {
         <section className={css.whyMe}>
           <WhyTitleAndDesc />
           <BenefitsList />
+        </section>
+        <section className={css.testimonials}>
+          <TestimonialsTitle />
+          <ListOfReviews reviews={reviews} />
         </section>
         <section></section>
       </main>
