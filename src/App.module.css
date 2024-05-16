@@ -18,11 +18,16 @@
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
-    padding: 0 24px;
     background-position-x: center;
     background-position-y: bottom;
+  }
+  .heroAll {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    width: 100%;
   }
   @media (min-resolution: 192dpi) {
     .heroSection {
@@ -32,22 +37,68 @@
     }
   }
   /* About Us */
-  .aboutUs,
-  .whyMe,
-  .portfolio,
-  .testimonials {
-    background: rgb(13, 15, 17);
-    padding: 0 16px;
+  .aboutUs {
     padding-bottom: 80px;
   }
-  /* .portfolio {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  } */
+  .containerAbout {
+    padding: 0 32px;
+  }
+  .whyMe {
+    padding: 0 16px;
+  }
+  .whyMe,
+  .portfolio {
+    padding-bottom: 80px;
+  }
+  .testimonials {
+    background: rgb(20, 31, 36);
+    padding: 60px 8px;
+  }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 767px) {
+  .topLine {
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    width: 768px;
+  }
+  .hederWrapper {
+    height: 100%;
+    width: 100%;
+  }
+  .heroSection {
+    padding: 40px 0;
+    margin-bottom: 80px;
+  }
+  .heroAll {
+    padding: 0 80px;
+  }
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+  .aboutUs {
+    padding-bottom: 90px;
+  }
+  .whyMe {
+    padding: 0 32px;
+  }
+
+  .whyMe,
+  .portfolio {
+    padding-bottom: 90px;
+  }
+  .testimonials {
+    background: rgb(20, 31, 36);
+    padding: 80px 16px;
+  }
+}
+
+@media screen and (min-width: 1439px) {
   .topLine {
     padding: 0 120px;
   }

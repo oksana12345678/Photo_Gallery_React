@@ -1,0 +1,41 @@
+@media screen and (min-width: 320px) {
+  .container {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 30px;
+    align-items: center;
+  }
+  .avatarTitle::after {
+    content: "";
+    display: flex;
+    width: 220px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.34);
+  }
+
+  .avatar {
+    width: 66px;
+    border-radius: 100%;
+  }
+  .title {
+    color: rgb(255, 255, 255);
+    font-family: Cormorant;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    text-align: left;
+    text-transform: capitalize;
+  }
+  .review {
+    color: rgb(255, 255, 255);
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 150%;
+    text-align: left;
+    text-transform: capitalize;
+    padding-top: 30px;
+    height: 162px;
+    overflow: scroll;
+  }
+}

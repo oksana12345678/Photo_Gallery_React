@@ -18,8 +18,20 @@
     color: rgb(255, 255, 255);
   }
 }
+@media screen and (min-width: 767px) {
+  .list {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    
+  }
+  .link {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+}
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1439px) {
   .list {
     display: flex;
     flex-direction: row;

@@ -27,9 +27,7 @@ export default function App() {
       try {
         setError(false);
         const data = await fetchImages(searchTerm);
-        console.log(data);
         setImages(data.results);
-        console.log(data);
       } catch (error) {
         setError(true);
       }
@@ -42,15 +40,13 @@ export default function App() {
       try {
         setError(false);
         const data = await fetchReviews();
-        setReviews(data.results);
-        console.log(data);
+        setReviews(data);
       } catch (error) {
         setError(true);
       }
     };
     getReviews();
   }, [setReviews]);
-
   return (
     <>
       <header className={css.topLine}>
@@ -61,15 +57,19 @@ export default function App() {
       </header>
       <main>
         <section className={css.heroSection}>
-          <div>
-            <HeroContent />
-            <HeroButton />
+          <div className={css.heroAll}>
+            <div className={css.heroContainer}>
+              <HeroContent />
+              <HeroButton />
+            </div>
+            <SocialMedia />
           </div>
-          <SocialMedia />
         </section>
         <section className={css.aboutUs}>
-          <TitleAndDesc />
-          <DescList />
+          <div className={css.containerAbout}>
+            <TitleAndDesc />
+            <DescList />
+          </div>
           <PhotoGallery items={images} />
         </section>
         <section className={css.portfolio}>

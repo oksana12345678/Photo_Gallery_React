@@ -5,7 +5,6 @@ import "swiper/css";
 import { Navigation } from "swiper/modules";
 import { useRef, useState } from "react";
 import ButtonPrivNext from "../ButtonPrivNext/ButtonPrivNext";
-import { EffectFade } from "swiper/modules";
 import "swiper/css/effect-fade";
 
 const PhotoGallery = ({ items }) => {
@@ -31,8 +30,7 @@ const PhotoGallery = ({ items }) => {
       <Swiper
         ref={swiper}
         className={css.slides}
-        modules={[Navigation, EffectFade]}
-        effect="fade"
+        modules={[Navigation]}
         speed={1000}
         navigation
         direction="horizontal"
@@ -42,11 +40,14 @@ const PhotoGallery = ({ items }) => {
           320: {
             slidesPerView: 1,
             spaceBetween: 8,
-
-            768: {
-              slidesPerView: 2,
-            },
-            1440: { slidesPerView: 6 },
+          },
+          767: {
+            slidesPerView: 3,
+            spaceBetween: 8,
+          },
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 24,
           },
         }}
       >

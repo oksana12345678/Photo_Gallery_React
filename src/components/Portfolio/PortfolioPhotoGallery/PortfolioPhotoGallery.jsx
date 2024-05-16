@@ -1,7 +1,7 @@
 import css from "./PortfolioPhotoGallery.module.css";
 import PortfolioPhotoCard from "../PortfolioPhotoCard/PortfolioPhotoCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Grid } from "swiper/modules";
 import { useRef } from "react";
 import "swiper/css";
 import { useState, useEffect } from "react";
@@ -9,6 +9,11 @@ import SortedBy from "../SortedBy/SortedNav";
 import "swiper/css/pagination";
 import fetchImages from "/src/components/fetchImages/fetchImages";
 import { CgArrowLongRight } from "react-icons/cg";
+// import "swiper/css/effect-coverflow";
+// import "swiper/element/css/effect-coverflow";
+// import { EffectCoverflow } from "swiper";
+import "swiper/css/grid";
+
 const PhotoGallery = ({ swiperId }) => {
   const secondSwiper = useRef(null);
   const [items, setItems] = useState([]);
@@ -19,9 +24,7 @@ const PhotoGallery = ({ swiperId }) => {
     const itemSearch = async () => {
       try {
         const data = await fetchImages(searchTerm);
-        console.log(data);
         setItems(data.results);
-        console.log(data);
       } catch (error) {
         setError(true);
       }
@@ -33,54 +36,76 @@ const PhotoGallery = ({ swiperId }) => {
     secondSwiper.current = swiperInst;
   };
   return (
-    <div className={css.slides}>
+    <div>
       <SortedBy swiperId="swiperTwo" onSearch={setSearchTerm} />
-
-      {Image ? (
-        <Swiper
-          id={swiperId}
-          ref={secondSwiper}
-          modules={[Navigation, Pagination]}
-          navigation
-          pagination={{ clickable: true, dynamicBullets: true }}
-          direction="horizontal"
-          loop={true}
-          onSlideChange={() => {
-            console.log("slide change");
-          }}
-          onSwiper={handleSwiperInit}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 24,
-              768: {
-                slidesPerView: 2,
+      <div className={css.slides}>
+        {Image ? (
+          <Swiper
+            className={css.slides}
+            id={swiperId}
+            ref={secondSwiper}
+            modules={[Navigation, Pagination, Grid]}
+            navigation
+            grid={{
+              rows: 2,
+            }}
+            autoHeight={false}
+            // loop={true}
+            // effect="coverflow"
+            // coverflowEffect={{
+            //   rotate: 50,
+            //   stretch: 0,
+            //   depth: 100,
+            //   modifier: 1,
+            //   slideShadows: false,
+            // }}
+            keyboard={{
+              enabled: true,
+              onlyInViewport: true,
+            }}
+            watchOverflow={true}
+            direction="horizontal"
+            onSlideChange={() => {
+              console.log("slide change");
+            }}
+            onSwiper={handleSwiperInit}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 8,
               },
-              1440: { slidesPerView: 6 },
-            },
+              767: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+              },
+              1440: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+              },
+            }}
+          >
+            {items.map((item) => (
+              <SwiperSlide className={css.listItem} key={item.id}>
+                <PortfolioPhotoCard
+                  small={item.urls.small}
+                  description={item.description}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <p>{error}</p>
+        )}
+        <button
+          className={css.button}
+          onClick={() => {
+            secondSwiper.current.slideNext();
           }}
         >
-          {items.map((item) => (
-            <SwiperSlide className={css.listItem} key={item.id}>
-              <PortfolioPhotoCard
-                small={item.urls.small}
-                description={item.description}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      ) : (
-        <p>{error}</p>
-      )}
-      <button
-        className={css.button}
-        onClick={() => {
-          secondSwiper.current.slideNext();
-        }}
-      >
-        see more
-        <CgArrowLongRight className={css.item} />
-      </button>
+          see more
+          <CgArrowLongRight className={css.item} />
+        </button>
+      </div>
     </div>
   );
 };

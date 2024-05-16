@@ -1,0 +1,36 @@
+@media screen and (min-width: 320px) {
+  .wrapper {
+    margin: 0 auto;
+  }
+
+  .listItem {
+    background: rgb(35, 57, 66);
+    padding: 30px;
+    height: 350px;
+    width: 300px;
+  }
+  .buttonContainer {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+  }
+  .buttonArrow {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .end {
+    color: #878585;
+    border: 1px solid #878585;
+  }
+}
+@media screen and (min-width: 768px) {
+}

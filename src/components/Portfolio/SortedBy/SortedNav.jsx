@@ -5,7 +5,7 @@ const SortedBy = ({ onSearch, swiperId }) => {
     onSearch(searchWord, swiperId);
   };
   return (
-    <div>
+    <div className={css.container}>
       <ul className={css.list}>
         <li className={css.listItem}>
           <button className={css.button} onClick={() => handleClick("all")}>

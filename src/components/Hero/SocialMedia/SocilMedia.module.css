@@ -6,6 +6,7 @@
     gap: 20px;
     width: 22px;
     align-items: center;
+    justify-content: center;
   }
   .icon {
     stroke: rgb(35, 57, 66);
@@ -14,7 +15,16 @@
   .list::after {
     content: "";
     width: 1px;
-    height: 40px;
+    height: 60px;
+    background-color: rgb(35, 57, 66);
+  }
+}
+@media screen and (min-width: 678px) {
+  .list::before,
+  .list::after {
+    content: "";
+    width: 1px;
+    height: 200px;
     background-color: rgb(35, 57, 66);
   }
 }

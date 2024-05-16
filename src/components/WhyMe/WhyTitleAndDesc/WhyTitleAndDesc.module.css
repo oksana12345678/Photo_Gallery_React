@@ -25,3 +25,10 @@
     width: 280px;
   }
 }
+@media screen and (min-width: 768px) {
+  .container {
+    height: 240px;
+    position: absolute;
+    left: 10%;
+  }
+}

@@ -18,7 +18,6 @@ const fetchImages = async (searchQuery, page) => {
         },
       }
     );
-    console.log(response);
     return response.data;
   } catch (error) {
     console.log("Error fetching images:", error);
