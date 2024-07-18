@@ -1,12 +1,39 @@
 import price from "../../../../price.json";
 import ListItemCard from "../ListItemCard/ListItemCard";
 import css from "./PriceList.module.css";
+import { Navigation, Pagination } from "swiper/modules";
+import { SwiperSlide, Swiper } from "swiper/react";
 
 const PriceList = () => {
   const allPrice = price;
   return (
     <>
-      <ul className={css.list}>
+      <Swiper
+        className={css.list}
+        modules={[Navigation, Pagination]}
+        keyboard={{
+          enabled: true,
+          onlyInViewport: true,
+        }}
+        loop={true}
+        pagination={{ dynamicBullets: true }}
+        watchOverflow={true}
+        direction="horizontal"
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 8,
+          },
+          767: {
+            slidesPerView: 3,
+            spaceBetween: 16,
+          },
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 24,
+          },
+        }}
+      >
         {allPrice.map(
           ({
             id,
@@ -14,7 +41,7 @@ const PriceList = () => {
             cost,
             description: { duration, photos, retouching, finish },
           }) => (
-            <li className={css.listItem} key={id}>
+            <SwiperSlide className={css.listItem} key={id}>
               <ListItemCard
                 name={name}
                 cost={cost}
@@ -23,10 +50,10 @@ const PriceList = () => {
                 retouching={retouching}
                 finish={finish}
               />
-            </li>
+            </SwiperSlide>
           )
         )}
-      </ul>
+      </Swiper>
     </>
   );
 };

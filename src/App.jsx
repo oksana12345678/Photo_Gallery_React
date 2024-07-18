@@ -17,7 +17,9 @@ import TestimonialsTitle from "./components/Testimonials/TestimonialsTitle/Testi
 import fetchReviews from "./components/fetchReviews/fetchReviews";
 import ListOfReviews from "./components/Testimonials/ListOfReviews/ListOfReviews";
 import PriceList from "./components/PriceList/PriceList/PriceList";
-
+import TitlePortfolio from "./components/Portfolio/TitlePortfolio/TitlePortfolio";
+import GetMoreWindow from "./components/GetMoreInfo/GetMoreWindow/GetMoreWindow";
+import FooterContainer from "./components/Footer/FooterContainer/FooterContainer";
 export default function App() {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
@@ -75,7 +77,7 @@ export default function App() {
           <PhotoGallery items={images} />
         </section>
         <section className={css.portfolio}>
-          <Title>portfolio</Title>
+          <TitlePortfolio />
           <PortfolioPhotoGallery swiperId="swiperTwo" items={images} />
         </section>
         <section className={css.whyMe}>
@@ -90,8 +92,13 @@ export default function App() {
           <Title className={css.priceTitle}>price list</Title>
           <PriceList />
         </section>
+        <section className={css.getMore}>
+          <GetMoreWindow />
+        </section>
       </main>
-      <footer></footer>
+      <footer>
+        <FooterContainer />
+      </footer>
     </>
   );
 }

@@ -1,0 +1,10 @@
+.desc {
+  color: rgb(255, 255, 255);
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 174%;
+  letter-spacing: 2%;
+  text-align: center;
+  text-transform: capitalize;
+}

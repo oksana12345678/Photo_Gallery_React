@@ -1,0 +1,7 @@
+.container {
+  width: 280px;
+  height: 280px;
+  position: absolute;
+  transform: translate(7%, 50%);
+  background-color: rgb(35, 57, 66);
+}

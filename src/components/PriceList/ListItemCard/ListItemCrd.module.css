@@ -1,72 +1,88 @@
-.mainContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-.titleContainer {
-  text-align: center;
-}
-.title {
-  text-transform: uppercase;
-  color: rgb(255, 255, 255);
-  font-family: Lato;
-  font-size: 36px;
-  font-weight: 500;
-  line-height: 43px;
-}
-.cost {
-  color: rgb(255, 255, 255);
-  font-family: Cormorant;
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 48px;
-  letter-spacing: 0%;
-  text-align: center;
-  text-transform: capitalize;
-}
-.descContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-.desc {
-  color: rgb(255, 255, 255);
+@media screen and (min-width: 320px) {
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .titleContainer {
+    text-align: center;
+  }
+  .title {
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 43px;
+  }
+  .cost {
+    color: rgb(255, 255, 255);
+    font-family: Cormorant;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 48px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .descContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+  }
+  .desc {
+    color: rgb(255, 255, 255);
 
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+  }
+  .descItem {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 31px;
+    letter-spacing: 2%;
+    text-align: left;
+    text-transform: capitalize;
+  }
+  .descCost {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 31px;
+    letter-spacing: 2%;
+    text-align: left;
+  }
+  .button {
+    margin: 0 auto;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    background-color: transparent;
+    width: 240px;
+    height: 60px;
+    color: rgb(255, 255, 255);
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 2%;
+    text-align: left;
+    text-transform: capitalize;
+    text-align: center;
+    cursor: pointer;
+  }
+  .button:hover {
+    border: 2px solid rgb(61, 99, 115);
+    color: rgb(61, 99, 115);
+  }
 }
-.descItem {
-  font-family: Lato;
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 31px;
-  letter-spacing: 2%;
-  text-align: left;
-  text-transform: capitalize;
-}
-.descCost {
-  font-family: Lato;
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 31px;
-  letter-spacing: 2%;
-  text-align: left;
-}
-.button {
-  margin: 0 auto;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 4px;
-  background-color: transparent;
-  width: 360px;
-  height: 60px;
-  color: rgb(255, 255, 255);
-  font-family: Lato;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 36px;
-  letter-spacing: 2%;
-  text-align: left;
-  text-transform: capitalize;
-  text-align: center;
-  cursor: pointer;
+
+@media screen and (min-width: 768px) {
+  .button {
+    width: 200px;
+    font-size: 16px;
+  }
+  .button:hover {
+    border: 2px solid rgb(61, 99, 115);
+    color: rgb(61, 99, 115);
+  }
 }

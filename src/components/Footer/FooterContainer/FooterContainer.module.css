@@ -1,0 +1,13 @@
+.container {
+  padding: 40px 16px;
+  height: 300px;
+  background-color: rgb(20, 24, 20);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 24px;
+}
+.logoAndSocial {
+  display: flex;
+  justify-content: space-between;
+}

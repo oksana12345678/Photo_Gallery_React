@@ -55,7 +55,10 @@
     padding: 60px 8px;
   }
   .price {
-    background-image: linear-gradient(rgb(20, 31, 36), rgba(20, 31, 36, 0.7)),
+    background-image: linear-gradient(
+        rgb(20, 31, 36, 1.2),
+        rgba(20, 31, 36, 0.4)
+      ),
       url(./img/retro-photo.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -63,6 +66,10 @@
   }
   .priceTitle {
     justify-content: flex-start;
+  }
+  .getMore {
+    height: 300px;
+    position: relative;
   }
 }
 

@@ -33,5 +33,16 @@
       "retouching": "unlimited",
       "finish": "3 days"
     }
+  },
+  {
+    "id": 4,
+    "name": "standard plus",
+    "cost": "420$",
+    "description": {
+      "duration": "3.5 hours",
+      "photos": "65 - 85",
+      "retouching": "30 items",
+      "finish": "10 days"
+    }
   }
 ]
