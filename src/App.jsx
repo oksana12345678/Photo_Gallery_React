@@ -12,10 +12,12 @@ import PhotoGallery from "./components/AboutUs/PhotoGallery/PhotoGallery";
 import BenefitsList from "./components/WhyMe/BenefitsList/BenefitsList";
 import WhyTitleAndDesc from "./components/WhyMe/WhyTitleAndDesc/WhyTitleAndDesc";
 import PortfolioPhotoGallery from "./components/Portfolio/PortfolioPhotoGallery/PortfolioPhotoGallery";
-import Title from "./components/Portfolio/Title/Title";
+import Title from "./components/Title/Title";
 import TestimonialsTitle from "./components/Testimonials/TestimonialsTitle/TestimonialsTitle";
 import fetchReviews from "./components/fetchReviews/fetchReviews";
 import ListOfReviews from "./components/Testimonials/ListOfReviews/ListOfReviews";
+import PriceList from "./components/PriceList/PriceList/PriceList";
+
 export default function App() {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
@@ -73,7 +75,7 @@ export default function App() {
           <PhotoGallery items={images} />
         </section>
         <section className={css.portfolio}>
-          <Title />
+          <Title>portfolio</Title>
           <PortfolioPhotoGallery swiperId="swiperTwo" items={images} />
         </section>
         <section className={css.whyMe}>
@@ -84,7 +86,10 @@ export default function App() {
           <TestimonialsTitle />
           <ListOfReviews reviews={reviews} />
         </section>
-        <section></section>
+        <section className={css.price}>
+          <Title className={css.priceTitle}>price list</Title>
+          <PriceList />
+        </section>
       </main>
       <footer></footer>
     </>

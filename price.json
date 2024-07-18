@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "premium",
+    "cost": "550$",
+    "description": {
+      "duration": "4 hours",
+      "photos": "85 - 90",
+      "retouching": "40 items",
+      "finish": "7 days"
+    }
+  },
+  {
+    "id": 2,
+
+    "name": "standard",
+    "cost": "400$",
+    "description": {
+      "duration": "3 hours",
+      "photos": "60 - 80",
+      "retouching": "25 items",
+      "finish": "10 days"
+    }
+  },
+  {
+    "id": 3,
+
+    "name": "pro",
+    "cost": "600$",
+    "description": {
+      "duration": "6 hours",
+      "photos": "unlimited",
+      "retouching": "unlimited",
+      "finish": "3 days"
+    }
+  }
+]
