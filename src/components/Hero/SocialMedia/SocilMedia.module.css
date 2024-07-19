@@ -9,7 +9,7 @@
     justify-content: center;
   }
   .icon {
-    stroke: rgb(35, 57, 66);
+    color: rgb(35, 57, 66);
   }
   .list::before,
   .list::after {

@@ -7,16 +7,24 @@ const FooterSocial = () => {
   return (
     <ul className={css.list}>
       <li className={css.listItem}>
-        <PiTwitterLogoLight className={css.icon} />
+        <a href="#">
+          <PiTwitterLogoLight className={css.icon} />
+        </a>
       </li>
       <li className={css.listItem}>
-        <SlSocialGoogle className={css.icon} />
+        <a href="#">
+          <SlSocialGoogle className={css.icon} />
+        </a>
       </li>
       <li className={css.listItem}>
-        <LuFacebook className={css.icon} />
+        <a href="#">
+          <LuFacebook className={css.icon} />
+        </a>
       </li>
       <li className={css.listItem}>
-        <SlSocialLinkedin className={css.icon} />
+        <a href="#">
+          <SlSocialLinkedin className={css.icon} />
+        </a>
       </li>
     </ul>
   );

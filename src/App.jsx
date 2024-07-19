@@ -20,11 +20,25 @@ import PriceList from "./components/PriceList/PriceList/PriceList";
 import TitlePortfolio from "./components/Portfolio/TitlePortfolio/TitlePortfolio";
 import GetMoreWindow from "./components/GetMoreInfo/GetMoreWindow/GetMoreWindow";
 import FooterContainer from "./components/Footer/FooterContainer/FooterContainer";
+import MobilMenu from "./components/MobilMenu/MobilMenu";
 export default function App() {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("wedding");
   const [reviews, setReviews] = useState();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleStateChange = (state) => {
+    setMenuOpen(state.isOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   useEffect(() => {
     const imageSearch = async () => {
@@ -52,14 +66,21 @@ export default function App() {
     getReviews();
   }, [setReviews]);
   return (
-    <>
+    <div id="outer-container">
       <header className={css.topLine}>
         <div className={css.hederWrapper}>
           <Logo />
-          <MenuNavigation />
+          <MenuNavigation toggleMenu={toggleMenu} />
         </div>
       </header>
-      <main>
+      <MobilMenu
+        menuOpen={menuOpen}
+        onStateChange={handleStateChange}
+        outerContainerId={"outer-container"}
+        closeMenu={closeMenu}
+        toggleMenu={toggleMenu}
+      />
+      <main id="page-wrap">
         <section className={css.heroSection}>
           <div className={css.heroAll}>
             <div className={css.heroContainer}>
@@ -99,6 +120,6 @@ export default function App() {
       <footer>
         <FooterContainer />
       </footer>
-    </>
+    </div>
   );
 }

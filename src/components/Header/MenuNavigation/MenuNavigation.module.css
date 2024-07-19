@@ -17,17 +17,49 @@
   .link:hover {
     color: rgb(255, 255, 255);
   }
+  .bmBurgerButton {
+    background-color: #fafaff;
+    border: none;
+    width: 24px;
+  }
+  .line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .line::after {
+    content: "";
+    background-color: #fafaff;
+    width: 24px;
+    height: 2px;
+    display: block;
+  }
+  .visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
 }
 @media screen and (min-width: 767px) {
   .list {
     display: flex;
     flex-direction: row;
     gap: 32px;
-    
   }
   .link {
     font-size: 14px;
     text-transform: uppercase;
+  }
+  .line {
+    display: none;
   }
 }
 

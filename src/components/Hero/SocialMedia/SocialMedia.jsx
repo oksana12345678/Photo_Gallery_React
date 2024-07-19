@@ -1,35 +1,31 @@
 import css from "./SocilMedia.module.css";
+import { PiTwitterLogoLight } from "react-icons/pi";
+import { SlSocialGoogle } from "react-icons/sl";
+import { LuFacebook } from "react-icons/lu";
+import { SlSocialLinkedin } from "react-icons/sl";
 
 const SocialMedia = () => {
   const width = "20px";
   return (
-    <ul className={css.list }>
+    <ul className={css.list}>
       <li>
         <a href="#">
-          <svg className={css.icon} width={width} height={width}>
-            <use href="/src/svg/icon.svg#icon-twitter"></use>
-          </svg>
+          <PiTwitterLogoLight className={css.icon} />
         </a>
       </li>
       <li>
         <a href="#">
-          <svg className={css.icon} width={width} height={width}>
-            <use href="/src/svg/icon.svg#icon-google"></use>
-          </svg>
+          <SlSocialGoogle className={css.icon} />
         </a>
       </li>
       <li>
         <a href="#">
-          <svg className={css.icon} width={width} height={width}>
-            <use href="/src/svg/icon.svg#icon-facebook"></use>
-          </svg>
+          <LuFacebook className={css.icon} />
         </a>
       </li>
       <li>
         <a href="#">
-          <svg className={css.icon} width={width} height={width}>
-            <use href="/src/svg/icon.svg#icon-in"></use>
-          </svg>
+          <SlSocialLinkedin className={css.icon} />
         </a>
       </li>
     </ul>
