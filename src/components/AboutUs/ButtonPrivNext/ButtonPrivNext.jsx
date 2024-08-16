@@ -1,5 +1,5 @@
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
+import { TbArrowBigRightLine } from "react-icons/tb";
+import { TbArrowBigLeftLine } from "react-icons/tb";
 import css from "./ButtonPrivNext.module.css";
 import SwiperCore from "swiper/core";
 import { Navigation } from "swiper/modules";
@@ -18,7 +18,7 @@ const ButtonPrivNext = ({ swiper, isEnd, isBeginning }) => {
         onClick={() => swiper.current.slidePrev()}
         disabled={isBeginning}
       >
-        <IoIosArrowBack className={css.icon} />
+        <TbArrowBigLeftLine className={css.icon} />
       </button>
       <button
         className={lastSlide}
@@ -26,7 +26,7 @@ const ButtonPrivNext = ({ swiper, isEnd, isBeginning }) => {
           swiper.current.slideNext();
         }}
       >
-        <IoIosArrowForward className={css.icon} />
+        <TbArrowBigRightLine className={css.icon} />
       </button>
     </div>
   );
