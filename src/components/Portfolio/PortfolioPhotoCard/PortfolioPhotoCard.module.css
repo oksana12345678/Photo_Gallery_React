@@ -1,4 +1,4 @@
-@media screen and (min-width: 320px) {
+/* @media screen and (min-width: 320px) {
   .image {
     display: block;
     width: 100%;
@@ -12,5 +12,23 @@
 @media screen and (min-width: 768px) {
   .container {
     height: 238px;
+  }
+} */
+
+@media screen and (min-width: 320px) {
+  .image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .container {
+    height: 12.125em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    height: 14.875em;
   }
 }

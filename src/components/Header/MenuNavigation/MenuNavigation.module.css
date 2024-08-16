@@ -1,4 +1,4 @@
-@media screen and (min-width: 320px) {
+/* @media screen and (min-width: 320px) {
   .list {
     display: none;
     list-style: none;
@@ -68,5 +68,79 @@
     display: flex;
     flex-direction: row;
     gap: 58px;
+  }
+} */
+
+@media screen and (min-width: 320px) {
+  .list {
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .link {
+    text-decoration: none;
+    color: rgb(137, 141, 146);
+    transition: color 0.4s ease-in-out;
+    font: Lato;
+    font-weight: 500;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+  .link:hover {
+    color: rgb(255, 255, 255);
+  }
+  .bmBurgerButton {
+    background-color: #fafaff;
+    border: none;
+    width: 1.5em;
+  }
+  .line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .line::after {
+    content: "";
+    background-color: #fafaff;
+    width: 1.5em;
+    height: 0.125em;
+    display: block;
+  }
+  .visuallyHidden {
+    position: absolute;
+    width: 0.0625em;
+    height: 0.0625em;
+    margin: -0.0625em;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .list {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+  .link {
+    font-size: 0.875em;
+    text-transform: uppercase;
+  }
+  .line {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1439px) {
+  .list {
+    display: flex;
+    flex-direction: row;
+    gap: 3.625em;
   }
 }

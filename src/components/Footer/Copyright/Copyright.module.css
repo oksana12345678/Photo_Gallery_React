@@ -1,10 +1,21 @@
-.desc {
+/* .desc {
   color: rgb(255, 255, 255);
   font-family: Lato;
   font-size: 12px;
   font-weight: 500;
   line-height: 174%;
   letter-spacing: 2%;
+  text-align: center;
+  text-transform: capitalize;
+} */
+
+.desc {
+  color: rgb(255, 255, 255);
+  font-family: Lato;
+  font-size: 0.75em; 
+  font-weight: 500;
+  line-height: 1.74;
+  letter-spacing: 0.02em; 
   text-align: center;
   text-transform: capitalize;
 }

@@ -1,4 +1,4 @@
-.visuallyHidden {
+/* .visuallyHidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -70,6 +70,83 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+    text-align: center;
+  }
+} */
+
+.visuallyHidden {
+  position: absolute;
+  width: 0.0625em;
+  height: 0.0625em;
+  margin: -0.0625em;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@media screen and (min-width: 320px) {
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3.125em;
+    padding: 1em;
+    align-items: center;
+  }
+  .title {
+    color: rgb(255, 255, 255);
+    font-family: Cormorant;
+    font-size: 1.25em;
+    font-weight: 400;
+    line-height: 1.375em;
+    letter-spacing: 0%;
+    text-align: center;
+    width: 10em;
+  }
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .inputContainer {
+    display: flex;
+  }
+  .input {
+    position: relative;
+    width: 15em;
+    height: 2.5em;
+    border: none;
+    color: rgb(137, 141, 146);
+    font-family: Cormorant;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.9375em;
+    letter-spacing: 0%;
+    padding-left: 0.5em;
+  }
+  .button {
+    position: absolute;
+    transform: translate(7.5em);
+    width: 4.375em;
+    height: 2.125em;
+    border: none;
+    background-color: rgb(35, 57, 66);
+    color: rgb(255, 255, 255);
+    font-family: Lato;
+    font-size: 0.875em;
+    font-weight: 400;
+    line-height: 1.3125em;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .policy {
+    color: rgb(255, 255, 255);
+    font-family: Lato;
+    font-size: 0.875em;
+    font-weight: 400;
+    line-height: 1.25em;
     text-align: center;
   }
 }

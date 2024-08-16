@@ -1,4 +1,4 @@
-@media screen and (min-width: 320px) {
+/* @media screen and (min-width: 320px) {
   .titleContainer {
     display: flex;
     flex-direction: column;
@@ -43,5 +43,51 @@
     font-size: 18px;
   }
 }
+*/
+
+@media screen and (min-width: 320px) {
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3.25em;
+    width: 100%;
+  }
+  .titleOne {
+    font: Lato;
+    font-weight: 500;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    gap: 0.5em;
+  }
+  .titleTwo {
+    padding-left: 2.5em;
+  }
+  .desc {
+    width: 12.25em;
+    display: flex;
+    color: rgb(185, 186, 187);
+    font: Lato;
+    font-weight: 400;
+    font-size: 1em;
+    margin-left: 3.25em;
+    height: 3.75em;
+  }
+}
+
 @media screen and (min-width: 768px) {
+  .titleContainer {
+    gap: 11.625em;
+  }
+  .titleOne {
+    font-size: 3.75em;
+    display: flex;
+  }
+  .desc {
+    width: 16.25em;
+    margin-left: 18.75em;
+    font-size: 1.125em;
+  }
 }

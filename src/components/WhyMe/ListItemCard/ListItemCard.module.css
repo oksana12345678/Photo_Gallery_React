@@ -1,4 +1,4 @@
-@media screen and (min-width: 320px) {
+/* @media screen and (min-width: 320px) {
   .listItem {
     width: 232px;
     align-items: center;
@@ -54,4 +54,61 @@
     height: 240px;
   }
   
+} */
+
+@media screen and (min-width: 320px) {
+  .listItem {
+    width: 14.5em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .listItem:hover {
+    width: 17.625em;
+    height: 14.375em;
+    border: 0.1875em solid rgb(35, 57, 66);
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 14.5em;
+  }
+  .icon {
+    color: rgb(137, 141, 146);
+    width: 1.5em;
+    height: 1.5em;
+  }
+  .listItem:hover .icon,
+  .listItem:hover .desc,
+  .listItem:hover .title {
+    color: rgb(255, 255, 255);
+  }
+
+  .title {
+    text-transform: capitalize;
+    color: rgb(237, 246, 255);
+    font-size: 1em;
+    font-family: Lato;
+  }
+
+  .desc {
+    color: rgb(137, 141, 146);
+    font-size: 0.875em;
+    font-family: Lato;
+    font-weight: 300;
+    line-height: 1.6;
+    text-transform: capitalize;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .listItem {
+    height: 15em;
+  }
 }

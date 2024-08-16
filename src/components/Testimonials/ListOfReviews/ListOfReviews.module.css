@@ -1,4 +1,4 @@
-@media screen and (min-width: 320px) {
+/* @media screen and (min-width: 320px) {
   .wrapper {
     margin: 0 auto;
   }
@@ -33,4 +33,42 @@
   }
 }
 @media screen and (min-width: 768px) {
+} */
+
+@media screen and (min-width: 320px) {
+  .wrapper {
+    margin: 0 auto;
+  }
+
+  .listItem {
+    background: rgb(35, 57, 66);
+    padding: 1.875em;
+    height: 21.875em;
+    width: 18.75em;
+  }
+
+  .buttonContainer {
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    justify-content: center;
+  }
+
+  .buttonArrow {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border: 0.0625em solid rgb(255, 255, 255);
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .end {
+    color: #878585;
+    border: 0.0625em solid #878585;
+  }
 }

@@ -1,9 +1,19 @@
+/* .logo {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  height: 28px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+} */
+
 .logo {
   text-transform: uppercase;
   font-weight: 900;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  /* width: 290px; */
-  height: 28px;
+  height: 1.75em;
   color: rgb(255, 255, 255);
   text-decoration: none;
   display: flex;

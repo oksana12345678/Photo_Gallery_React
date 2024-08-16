@@ -1,4 +1,4 @@
-.container {
+/* .container {
   width: 294px;
   margin: 0 auto;
 }
@@ -18,5 +18,30 @@
 @media screen and (min-width: 1439px) {
   .container {
     width: 320px;
+  }
+} */
+
+.container {
+  width: 18.375em; 
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  height: 21.875em; 
+  display: block;
+  object-fit: cover;
+  border-radius: 0.25em; 
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 15.5em; 
+  }
+}
+
+@media screen and (min-width: 1439px) {
+  .container {
+    width: 20em; 
   }
 }

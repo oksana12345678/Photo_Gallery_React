@@ -1,8 +1,18 @@
-.list {
+/* .list {
   display: flex;
   list-style: none;
 }
 .icon {
   color: rgb(255, 255, 255);
   width: 24px;
+} */
+
+.list {
+  display: flex;
+  list-style: none;
+}
+
+.icon {
+  color: rgb(255, 255, 255);
+  width: 1.5em;
 }

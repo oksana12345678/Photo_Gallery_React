@@ -1,4 +1,4 @@
-.container {
+/* .container {
   padding: 40px 16px;
   height: 300px;
   background-color: rgb(20, 24, 20);
@@ -7,6 +7,21 @@
   justify-content: flex-end;
   gap: 24px;
 }
+.logoAndSocial {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.container {
+  padding: 2.5em 1em;
+  height: 18.75em;
+  background-color: rgb(20, 24, 20);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1.5em;
+}
+
 .logoAndSocial {
   display: flex;
   justify-content: space-between;
