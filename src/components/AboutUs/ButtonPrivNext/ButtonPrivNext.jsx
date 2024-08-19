@@ -13,21 +13,21 @@ const ButtonPrivNext = ({ swiper, isEnd, isBeginning }) => {
 
   return (
     <div className={css.buttonContainer}>
-      <button
+      <div
         className={firstSlide}
         onClick={() => swiper.current.slidePrev()}
         disabled={isBeginning}
       >
         <TbArrowBigLeftLine className={css.icon} />
-      </button>
-      <button
+      </div>
+      <div
         className={lastSlide}
         onClick={() => {
           swiper.current.slideNext();
         }}
       >
         <TbArrowBigRightLine className={css.icon} />
-      </button>
+      </div>
     </div>
   );
 };

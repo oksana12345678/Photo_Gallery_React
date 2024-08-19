@@ -8,9 +8,9 @@ const MobilMenu = ({
 }) => {
   return (
     <div className={`${css.container} ${menuOpen ? css.open : ""}`}>
-      <button onClick={toggleMenu} className={css.bmBurgerButton}>
+      <div onClick={toggleMenu} className={css.bmBurgerButton}>
         <VscChromeClose className={css.icon} />
-      </button>
+      </div>
       <ul className={css.list}>
         <li className={css.listItem}>
           <a onClick={onStateChange} className={css.link} href="#">
