@@ -1,5 +1,5 @@
 import css from "./MobilMenu.module.css";
-import { IoCloseOutline } from "react-icons/io5";
+import { VscClose } from "react-icons/vsc";
 const MobilMenu = ({
   menuOpen,
   onStateChange = () => {},
@@ -8,11 +8,8 @@ const MobilMenu = ({
 }) => {
   return (
     <div className={`${css.container} ${menuOpen ? css.open : ""}`}>
-      <button
-        onClick={toggleMenu}
-        className={css.bmBurgerButton}
-      >
-        <IoCloseOutline className={css.icon} />
+      <button onClick={toggleMenu} className={css.bmBurgerButton}>
+        <VscClose className={css.icon} />
       </button>
       <ul className={css.list}>
         <li className={css.listItem}>
