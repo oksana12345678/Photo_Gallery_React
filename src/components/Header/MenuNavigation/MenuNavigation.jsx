@@ -27,7 +27,7 @@ const MenuNavigation = ({ toggleMenu }) => {
       </ul>
       <div className={css.line}>
         <button onClick={toggleMenu} className={css.bmBurgerButton}>
-          <span className={css.visuallyHidden}>button menu</span>
+          {/* <span className={css.visuallyHidden}>button menu</span> */}
         </button>
       </div>
     </div>
