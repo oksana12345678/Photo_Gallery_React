@@ -29,7 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     width: 100%;
     height: 1.875em;
   }
@@ -39,11 +39,12 @@
     color: rgb(137, 141, 146);
     text-transform: capitalize;
     font-size: 1em;
-    font: Lato;
+    font-family: Lato;
     font-weight: 500;
     cursor: pointer;
-  }
-  .iconBtn {
-    position: absolute;
+    border-top: 1px solid rgb(137, 141, 146);
+    border-left: 1px solid rgb(137, 141, 146);
+    border-bottom: 1px solid rgb(137, 141, 146);
+    border-radius: 2px;
   }
 }

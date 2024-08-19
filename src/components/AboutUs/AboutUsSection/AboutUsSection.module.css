@@ -1,0 +1,14 @@
+@media screen and (min-width: 320px) {
+  .aboutUs {
+    padding-bottom: 80px;
+  }
+  .containerAbout {
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 767) {
+  .aboutUs {
+    padding-bottom: 90px;
+  }
+}

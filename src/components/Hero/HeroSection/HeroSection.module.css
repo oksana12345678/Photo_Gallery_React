@@ -1,0 +1,52 @@
+@media screen and (min-width: 320px) {
+  .heroSection {
+    background-image: url(../../../img/noah-PhotoRoom.png),
+      linear-gradient(to right, #233942 50%, #0d0f11 50%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: space-between;
+    background-position-x: center;
+    background-position-y: bottom;
+  }
+  .heroAll {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    width: 100%;
+  }
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 40px;
+    height: 100%;
+    width: 100%;
+  }
+
+  @media (min-resolution: 192dpi) {
+    .heroSection {
+      background-image: url(../../../img/noah-PhotoRoom2x.png),
+        linear-gradient(to right, #233942 50%, #0d0f11 50%);
+      display: flex;
+    }
+  }
+}
+@media screen and (min-width: 767px) {
+  .heroSection {
+    padding: 40px 0;
+    margin-bottom: 80px;
+  }
+  .heroAll {
+    padding: 0 80px;
+  }
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    height: 100%;
+  }
+}

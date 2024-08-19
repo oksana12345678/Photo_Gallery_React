@@ -1,0 +1,35 @@
+@media screen and (min-width: 320px) {
+  .topLine {
+    padding: 0 20px;
+    background: linear-gradient(to right, #233942 50%, #0d0f11 50%);
+    width: 100%;
+    height: 96px;
+    position: relative;
+    z-index: 99999;
+  }
+  .hederWrapper {
+    height: 100%;
+    backdrop-filter: blur(30px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .topLine {
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+  }
+  .hederWrapper {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1439px) {
+  .topLine {
+    padding: 0 120px;
+  }
+}

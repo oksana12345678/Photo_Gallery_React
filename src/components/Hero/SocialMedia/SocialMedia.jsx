@@ -5,7 +5,6 @@ import { LuFacebook } from "react-icons/lu";
 import { SlSocialLinkedin } from "react-icons/sl";
 
 const SocialMedia = () => {
-  const width = "20px";
   return (
     <ul className={css.list}>
       <li>

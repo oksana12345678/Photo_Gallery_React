@@ -1,26 +1,16 @@
-import Logo from "./components/Header/Logo/Logo";
-import MenuNavigation from "./components/Header/MenuNavigation/MenuNavigation";
-import css from "./App.module.css";
-import HeroContent from "./components/Hero/HeroContent/HeroContent";
-import SocialMedia from "./components/Hero/SocialMedia/SocialMedia";
-import HeroButton from "./components/Hero/HeroButton/HeroButton";
-import TitleAndDesc from "./components/AboutUs/TitleAndDesc/TitleAndDesc";
-import DescList from "./components/AboutUs/DescList/DescList";
 import { useState, useEffect } from "react";
 import fetchImages from "./components/fetchImages/fetchImages";
-import PhotoGallery from "./components/AboutUs/PhotoGallery/PhotoGallery";
-import BenefitsList from "./components/WhyMe/BenefitsList/BenefitsList";
-import WhyTitleAndDesc from "./components/WhyMe/WhyTitleAndDesc/WhyTitleAndDesc";
-import PortfolioPhotoGallery from "./components/Portfolio/PortfolioPhotoGallery/PortfolioPhotoGallery";
-import Title from "./components/Title/Title";
-import TestimonialsTitle from "./components/Testimonials/TestimonialsTitle/TestimonialsTitle";
 import fetchReviews from "./components/fetchReviews/fetchReviews";
-import ListOfReviews from "./components/Testimonials/ListOfReviews/ListOfReviews";
-import PriceList from "./components/PriceList/PriceList/PriceList";
-import TitlePortfolio from "./components/Portfolio/TitlePortfolio/TitlePortfolio";
-import GetMoreWindow from "./components/GetMoreInfo/GetMoreWindow/GetMoreWindow";
-import FooterContainer from "./components/Footer/FooterContainer/FooterContainer";
-import MobilMenu from "./components/MobilMenu/MobilMenu";
+import AboutUsSection from "./components/AboutUs/AboutUsSection/AboutUsSection";
+import FooterSection from "./components/Footer/FooterSection/FooterSection";
+import GetMoreSection from "./components/GetMoreInfo/GetMoreSection/GetMoreSection";
+import HeaderSection from "./components/Header/HeaderSection/HeaderSection";
+import HeroSection from "./components/Hero/HeroSection/HeroSection";
+import PortfolioSection from "./components/Portfolio/PortfolioSection/PortfolioSection";
+import PriceListSection from "./components/PriceList/PriceListSection/PriceListSection";
+import TestimonialsSection from "./components/Testimonials/TestimonialsSection/TestimonialsSection";
+import WhyMeSection from "./components/WhyMe/WhyMeSection/WhyMeSection";
+import MainContainer from "./components/MainContainer";
 export default function App() {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
@@ -66,60 +56,23 @@ export default function App() {
     getReviews();
   }, [setReviews]);
   return (
-    <div id="outer-container">
-      <header className={css.topLine}>
-        <div className={css.hederWrapper}>
-          <Logo />
-          <MenuNavigation toggleMenu={toggleMenu} menuOpen={menuOpen} />
-        </div>
-      </header>
-      <MobilMenu
+    <>
+      <HeaderSection
+        toggleMenu={toggleMenu}
         menuOpen={menuOpen}
         onStateChange={handleStateChange}
         closeMenu={closeMenu}
-        toggleMenu={toggleMenu}
       />
-
-      <main id="page-wrap">
-        <section className={css.heroSection}>
-          <div className={css.heroAll}>
-            <div className={css.heroContainer}>
-              <HeroContent />
-              <HeroButton />
-            </div>
-            <SocialMedia />
-          </div>
-        </section>
-        <section className={css.aboutUs}>
-          <div className={css.containerAbout}>
-            <TitleAndDesc />
-            <DescList />
-          </div>
-          <PhotoGallery items={images} />
-        </section>
-        <section className={css.portfolio}>
-          <TitlePortfolio />
-          <PortfolioPhotoGallery swiperId="swiperTwo" items={images} />
-        </section>
-        <section className={css.whyMe}>
-          <WhyTitleAndDesc />
-          <BenefitsList />
-        </section>
-        <section className={css.testimonials}>
-          <TestimonialsTitle />
-          <ListOfReviews reviews={reviews} />
-        </section>
-        <section className={css.price}>
-          <Title className={css.priceTitle}>price list</Title>
-          <PriceList />
-        </section>
-        <section className={css.getMore}>
-          <GetMoreWindow />
-        </section>
-      </main>
-      <footer>
-        <FooterContainer />
-      </footer>
-    </div>
+      <MainContainer>
+        <HeroSection />
+        <AboutUsSection items={images} />
+        <PortfolioSection />
+        <WhyMeSection />
+        <TestimonialsSection reviews={reviews} />
+        <PriceListSection />
+        <GetMoreSection />
+      </MainContainer>
+      <FooterSection />
+    </>
   );
 }

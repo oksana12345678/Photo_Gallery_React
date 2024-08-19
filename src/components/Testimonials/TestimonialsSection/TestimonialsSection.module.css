@@ -1,0 +1,13 @@
+@media screen and (min-width: 320px) {
+  .testimonials {
+    background: rgb(20, 31, 36);
+    padding: 60px 8px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .testimonials {
+    background: rgb(20, 31, 36);
+    padding: 80px 16px;
+  }
+}
