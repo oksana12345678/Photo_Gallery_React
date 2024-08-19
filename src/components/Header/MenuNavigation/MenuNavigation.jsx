@@ -1,6 +1,6 @@
 import css from "./MenuNavigation.module.css";
 
-const MenuNavigation = ({ toggleMenu }) => {
+const MenuNavigation = ({ toggleMenu, menuOpen }) => {
   return (
     <div>
       <ul className={css.list}>
@@ -26,8 +26,10 @@ const MenuNavigation = ({ toggleMenu }) => {
         </li>
       </ul>
       <div className={css.line} onClick={toggleMenu}>
-        <div className={css.bmBurgerButton}></div>
-        <div className={css.bottomLine}></div>
+        <div
+          className={`${css.bmBurgerButton} ${menuOpen ? css.open : ""}`}
+        ></div>
+        <div className={`${css.bottomLine} ${menuOpen ? css.open : ""}`}></div>
       </div>
     </div>
   );

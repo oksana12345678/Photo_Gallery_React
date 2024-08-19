@@ -3,7 +3,9 @@
     padding: 0 20px;
     background: linear-gradient(to right, #233942 50%, #0d0f11 50%);
     width: 100%;
-    height: 60px;
+    height: 96px;
+    position: relative;
+    z-index: 99999;
   }
   .hederWrapper {
     height: 100%;

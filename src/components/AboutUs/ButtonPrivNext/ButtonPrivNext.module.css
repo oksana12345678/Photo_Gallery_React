@@ -34,7 +34,7 @@
   }
   .icon {
     color: #fafafa;
-    z-index: 99999;
+    z-index: 1000;
     width: 16px;
   }
   .buttonArrow {
