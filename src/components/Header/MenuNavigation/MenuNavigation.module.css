@@ -90,19 +90,19 @@
   .link:hover {
     color: rgb(255, 255, 255);
   }
-  .bmBurgerButton {
+  /* .bmBurgerButton {
     background-color: #fafaff;
     border: none;
     width: 1.5em;
-  }
+  } */
   .line {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5em;
   }
-  .line::after {
-    content: "";
+  .bottomLine,
+  .bmBurgerButton {
     background-color: #fafaff;
     width: 1.5em;
     height: 0.125em;
