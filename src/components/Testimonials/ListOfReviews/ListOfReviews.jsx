@@ -65,20 +65,20 @@ const ListOfReviews = ({ reviews }) => {
             </SwiperSlide>
           ))}
         <div className={css.buttonContainer}>
-          <button
+          <div
             className={firstSlide}
             onClick={() => reviewSwiper.current.slidePrev()}
           >
             <IoIosArrowBack className={css.icon} />
-          </button>
-          <button
+          </div>
+          <div
             className={lastSlide}
             onClick={() => {
               reviewSwiper.current.slideNext();
             }}
           >
             <IoIosArrowForward className={css.icon} />
-          </button>
+          </div>
         </div>
       </Swiper>
     </div>
