@@ -67,19 +67,19 @@ export default function App() {
   }, [setReviews]);
   return (
     <div id="outer-container">
+      {" "}
+      <MobilMenu
+        menuOpen={menuOpen}
+        onStateChange={handleStateChange}
+        closeMenu={closeMenu}
+        toggleMenu={toggleMenu}
+      />
       <header className={css.topLine}>
         <div className={css.hederWrapper}>
           <Logo />
           <MenuNavigation toggleMenu={toggleMenu} />
         </div>
       </header>
-      <MobilMenu
-        menuOpen={menuOpen}
-        onStateChange={handleStateChange}
-        outerContainerId={"outer-container"}
-        closeMenu={closeMenu}
-        toggleMenu={toggleMenu}
-      />
       <main id="page-wrap">
         <section className={css.heroSection}>
           <div className={css.heroAll}>
