@@ -8,6 +8,7 @@
     justify-content: space-between;
     background-position-x: center;
     background-position-y: bottom;
+    padding: 24px 0;
   }
   .heroAll {
     display: flex;
@@ -20,7 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    gap: 40px;
+    gap: 32px;
     height: 100%;
     width: 100%;
   }
@@ -35,11 +36,11 @@
 }
 @media screen and (min-width: 767px) {
   .heroSection {
-    padding: 40px 0;
-    margin-bottom: 80px;
+    padding: 60px 0;
   }
   .heroAll {
     padding: 0 80px;
+    gap: 40px;
   }
   .heroContainer {
     display: flex;

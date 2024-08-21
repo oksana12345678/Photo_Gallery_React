@@ -1,55 +1,8 @@
-/* @media screen and (min-width: 320px) {
-  .titleContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 52px;
-    width: 100%;
-  }
-  .titleOne {
-    font: Lato;
-    font-weight: 500;
-    font-size: 40px;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    color: rgb(255, 255, 255);
-    gap: 8px;
-  }
-  .titleTwo {
-    padding-left: 40px;
-  }
-  .desc {
-    width: 196px;
-    display: flex;
-    color: rgb(185, 186, 187);
-    font: Lato;
-    font-weight: 400;
-    font-size: 16px;
-    margin-left: 52px;
-    height: 60px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .titleContainer {
-    gap: 186px;
-  }
-  .titleOne {
-    font-size: 60px;
-    display: flex;
-  }
-  .desc {
-    width: 260px;
-    margin-left: 300px;
-    font-size: 18px;
-  }
-}
-*/
-
 @media screen and (min-width: 320px) {
   .titleContainer {
     display: flex;
     flex-direction: column;
-    gap: 3.25em;
+    gap: 4em;
     width: 100%;
   }
   .titleOne {
@@ -63,31 +16,36 @@
     gap: 0.2em;
   }
   .titleTwo {
-    padding-left: 2.5em;
+    padding-left: 2em;
+  }
+  .descContainer {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
   }
   .desc {
-    width: 12.25em;
+    width: 11em;
     display: flex;
-    color: rgb(185, 186, 187);
+    color: rgb(227, 238, 248);
     font-family: Lato;
     font-weight: 400;
     font-size: 1em;
-    margin-left: 3.25em;
-    height: 4.75em;
+    height: 5em;
   }
 }
 
 @media screen and (min-width: 768px) {
   .titleContainer {
-    gap: 11.625em;
+    gap: 9.625em;
   }
   .titleOne {
     font-size: 3.75em;
     display: flex;
   }
   .desc {
-    width: 16.25em;
-    margin-left: 18.75em;
+    width: 13.25em;
     font-size: 1.125em;
+    color: rgb(185, 186, 187);
+    align-items: flex-end;
   }
 }

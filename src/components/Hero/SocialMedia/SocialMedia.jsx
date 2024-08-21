@@ -1,4 +1,4 @@
-import css from "./SocilMedia.module.css";
+import css from "./SocialMedia.module.css";
 import { PiTwitterLogoLight } from "react-icons/pi";
 import { SlSocialGoogle } from "react-icons/sl";
 import { LuFacebook } from "react-icons/lu";

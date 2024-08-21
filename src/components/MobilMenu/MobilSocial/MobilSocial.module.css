@@ -1,0 +1,29 @@
+.list {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  color: rgb(137, 141, 146);
+  width: 24px;
+  height: 24px;
+}
+.container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.container::before,
+.container::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 2px;
+  background-color: rgb(137, 141, 146);
+}

@@ -1,14 +1,17 @@
 @media screen and (min-width: 320px) {
-  .aboutUs {
-    padding-bottom: 80px;
+  .aboutUsSection {
+    padding: 60px 0;
   }
   .containerAbout {
     padding: 0 32px;
   }
 }
 
-@media screen and (min-width: 767) {
-  .aboutUs {
-    padding-bottom: 90px;
+@media screen and (min-width: 767px) {
+  .aboutUsSection {
+    padding: 80px 0;
+  }
+  .containerAbout {
+    padding: 0 66px;
   }
 }

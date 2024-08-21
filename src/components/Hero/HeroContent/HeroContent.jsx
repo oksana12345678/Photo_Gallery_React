@@ -6,10 +6,12 @@ const HeroContent = () => {
       <h1 className={css.titleOne}>
         photo<span className={css.titleTwo}>graphy</span>
       </h1>
-      <p className={css.desc}>
-        Pellentesque mauris a lobortis in bibendum sed lobortis semper. Eget eu
-        vel eu vitae.
-      </p>
+      <div className={css.descContainer}>
+        <p className={css.desc}>
+          Pellentesque mauris a lobortis in bibendum sed lobortis semper. Eget
+          eu vel eu vitae.
+        </p>
+      </div>
     </div>
   );
 };

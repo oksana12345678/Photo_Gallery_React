@@ -65,9 +65,7 @@ const PhotoGallery = ({ swiperId }) => {
             }}
             watchOverflow={true}
             direction="horizontal"
-            onSlideChange={() => {
-              console.log("slide change");
-            }}
+            onSlideChange={() => {}}
             onSwiper={handleSwiperInit}
             breakpoints={{
               320: {

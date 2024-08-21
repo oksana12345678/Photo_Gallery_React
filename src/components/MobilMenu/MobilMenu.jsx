@@ -1,8 +1,18 @@
+import { useEffect } from "react";
 import css from "./MobilMenu.module.css";
-const MobilMenu = ({
-  menuOpen,
-  onStateChange = () => {},
-}) => {
+import MobilSocial from "./MobilSocial/MobilSocial";
+
+const MobilMenu = ({ menuOpen, onStateChange = () => {} }) => {
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
   return (
     <div className={`${css.container} ${menuOpen ? css.open : ""}`}>
       <div className={css.blurBack}>
@@ -28,6 +38,7 @@ const MobilMenu = ({
             </a>
           </li>
         </ul>
+        <MobilSocial />
       </div>
     </div>
   );

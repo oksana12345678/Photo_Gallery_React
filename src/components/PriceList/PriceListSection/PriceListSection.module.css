@@ -4,7 +4,7 @@
         rgb(20, 31, 36, 1.2),
         rgba(20, 31, 36, 0.4)
       ),
-      url(./img/retro-photo.jpg);
+      url(../../../img/retro-photo.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

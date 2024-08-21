@@ -17,8 +17,10 @@
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 100px;
 }
 
 .container.open {
@@ -39,7 +41,7 @@
 }
 
 .link {
-  color: #fff;
+  color: rgb(137, 141, 146);
   text-decoration: none;
   font-size: 1.5rem;
 }

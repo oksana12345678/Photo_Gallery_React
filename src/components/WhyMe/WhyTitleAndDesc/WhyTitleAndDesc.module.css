@@ -45,14 +45,13 @@
     font-family: Cormorant;
     font-size: 1.75em;
     font-weight: 400;
-    line-height: 5.3125em;
     text-align: left;
     text-transform: uppercase;
   }
   .desc {
     color: rgb(137, 141, 146);
     font-family: Lato;
-    font-size: 1em;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.6;
     text-align: left;
@@ -66,5 +65,7 @@
     height: 15em;
     position: absolute;
     left: 10%;
+    padding-top: 2em;
+    gap: 50px;
   }
 }
