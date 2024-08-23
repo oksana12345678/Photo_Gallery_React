@@ -1,0 +1,8 @@
+.end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  font-weight: 700;
+  color: rgb(160, 161, 162);
+}

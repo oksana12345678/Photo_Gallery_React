@@ -11,7 +11,7 @@ const fetchImages = async (searchQuery, page) => {
         params: {
           query: searchQuery,
           page: page,
-          per_page: 30,
+          per_page: 9,
         },
         headers: {
           Authorization: `Client-ID ${ACCESS_KEY}`,

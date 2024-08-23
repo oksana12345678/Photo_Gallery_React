@@ -1,44 +1,26 @@
-/* @media screen and (min-width: 320px) {
-  .slides {
-    position: relative;
-    height: 400px;
-  }
-
-  .button {
-    position: absolute;
-    backdrop-filter: blur(8px);
-    background: rgba(102, 102, 102, 0.21);
-    border: none;
-    top: 70%;
-    right: 50%;
-    z-index: 999999;
-    color: rgb(255, 255, 255);
-    text-transform: capitalize;
-    height: 50px;
-    width: 140px;
-  }
-  .item {
-    color: rgb(255, 255, 255);
-    width: 100px;
-    height: 40px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .slides {
-    height: 490px;
-  }
-
-  .button {
-    top: 70%;
-    right: 75%;
-  }
-} */
-
 @media screen and (min-width: 320px) {
-  .slides {
+  .container {
     position: relative;
-    height: 25em;
+  }
+  .slides {
+    display: grid;
+    grid: repeat(3, 100px) / auto-flow;
+    gap: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  .listItem {
+    width: 100px;
+    height: 100px;
+  }
+
+  .listItem:hover {
+    transform: scale(1.05);
   }
 
   .button {
@@ -46,28 +28,47 @@
     backdrop-filter: blur(0.5em);
     background: rgba(102, 102, 102, 0.21);
     border: none;
-    top: 70%;
-    right: 50%;
+    top: 40%;
+    right: 62%;
     z-index: 1000;
-    color: rgb(255, 255, 255);
     text-transform: capitalize;
-    height: 3.125em;
-    width: 8.75em;
+    height: 56px;
+    width: 110px;
+    cursor: pointer;
+  }
+
+  .link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
   }
   .item {
     color: rgb(255, 255, 255);
     width: 6.25em;
     height: 2.5em;
   }
+}
 
-  @media screen and (min-width: 768px) {
-    .slides {
-      height: 30.625em;
-    }
+@media screen and (min-width: 768px) {
+  .slides {
+    grid: repeat(3, 200px) / auto-flow;
+    gap: 16px;
+  }
 
-    .button {
-      top: 70%;
-      right: 75%;
-    }
+  .listItem {
+    width: 220px;
+    height: 200px;
+  }
+
+  .button {
+    position: absolute;
+    backdrop-filter: blur(0.5em);
+    background: rgba(102, 102, 102, 0.21);
+    border: none;
+    top: 46%;
+    right: 70%;
+    z-index: 1000;
+    text-transform: capitalize;
+    height: 70px;
+    width: 152px;
   }
 }

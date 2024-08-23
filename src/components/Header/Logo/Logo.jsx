@@ -1,6 +1,11 @@
+import { Link } from "react-router-dom";
 import css from "./Logo.module.css";
 
 const Logo = () => {
-  return <a className={css.logo} href="#">grapher shot.</a>;
+  return (
+    <Link to={"/"} className={css.logo}>
+      grapher shot.
+    </Link>
+  );
 };
 export default Logo;

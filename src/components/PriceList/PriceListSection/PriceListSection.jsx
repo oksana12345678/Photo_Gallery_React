@@ -4,7 +4,7 @@ import css from "./PriceListSection.module.css";
 
 const PriceListSection = () => {
   return (
-    <section className={css.price}>
+    <section className={css.price} id="price">
       <Title className={css.priceTitle}>price list</Title>
       <PriceList />
     </section>

@@ -1,4 +1,4 @@
-/* @media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) {
   .mainContainer {
     display: flex;
     flex-direction: column;
@@ -83,93 +83,6 @@
   }
   .button:hover {
     border: 2px solid rgb(61, 99, 115);
-    color: rgb(61, 99, 115);
-  }
-} */
-
-@media screen and (min-width: 320px) {
-  .mainContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25em;
-  }
-  .titleContainer {
-    text-align: center;
-  }
-  .title {
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-    font-family: Lato;
-    font-size: 1.5em;
-    font-weight: 500;
-    line-height: 2.6875em;
-  }
-  .cost {
-    color: rgb(255, 255, 255);
-    font-family: Cormorant;
-    font-size: 1.5em;
-    font-weight: 400;
-    line-height: 3em;
-    text-align: center;
-    text-transform: capitalize;
-  }
-  .descContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 2.875em;
-  }
-  .desc {
-    color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: space-between;
-  }
-  .descItem {
-    font-family: Lato;
-    font-size: 1.125em;
-    font-weight: 600;
-    line-height: 1.9375em;
-    letter-spacing: 0.02em;
-    text-align: left;
-    text-transform: capitalize;
-  }
-  .descCost {
-    font-family: Lato;
-    font-size: 1em;
-    font-weight: 400;
-    line-height: 1.9375em;
-    letter-spacing: 0.02em;
-    text-align: left;
-  }
-  .button {
-    margin: 0 auto;
-    border: 0.0625em solid rgb(255, 255, 255);
-    border-radius: 0.25em;
-    background-color: transparent;
-    width: 15em;
-    height: 3.75em;
-    color: rgb(255, 255, 255);
-    font-family: Lato;
-    font-size: 1.25em;
-    font-weight: 500;
-    line-height: 2.25em;
-    letter-spacing: 0.02em;
-    text-align: center;
-    text-transform: capitalize;
-    cursor: pointer;
-  }
-  .button:hover {
-    border: 0.125em solid rgb(61, 99, 115);
-    color: rgb(61, 99, 115);
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .button {
-    width: 12.5em;
-    font-size: 1em;
-  }
-  .button:hover {
-    border: 0.125em solid rgb(61, 99, 115);
     color: rgb(61, 99, 115);
   }
 }

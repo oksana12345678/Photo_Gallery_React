@@ -49,6 +49,7 @@
     background-color: transparent;
     border: none;
     font-size: 0.875em;
+    cursor: pointer;
   }
   .button:active {
     color: rgb(255, 255, 255);

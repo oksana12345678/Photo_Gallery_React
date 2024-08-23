@@ -1,18 +1,23 @@
-/* .list {
-  display: flex;
-  list-style: none;
+@media screen and (min-width: 320px) {
+  .list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 8px;
+  }
+  .icon {
+    color: rgb(255, 255, 255);
+    width: 16px;
+    height: 16px;
+  }
 }
-.icon {
-  color: rgb(255, 255, 255);
-  width: 24px;
-} */
 
-.list {
-  display: flex;
-  list-style: none;
-}
-
-.icon {
-  color: rgb(255, 255, 255);
-  width: 1.5em;
+@media screen and (min-width: 767px) {
+  .list {
+    gap: 16px;
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
 }

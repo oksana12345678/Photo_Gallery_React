@@ -5,7 +5,7 @@ import css from "./AboutUsSection.module.css";
 
 const AboutUsSection = ({ items }) => {
   return (
-    <section className={css.aboutUsSection}>
+    <section className={css.aboutUsSection} id="about">
       <div className={css.containerAbout}>
         <TitleAndDesc />
         <DescList />

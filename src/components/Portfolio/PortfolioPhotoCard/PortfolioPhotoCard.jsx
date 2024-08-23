@@ -1,10 +1,6 @@
 import css from "./PortfolioPhotoCard.module.css";
 
 const PhotoCard = ({ small, description }) => {
-  return (
-    <div className={css.container}>
-      <img className={css.image} src={small} alt={description} />
-    </div>
-  );
+  return <img className={css.image} src={small} alt={description} />;
 };
 export default PhotoCard;

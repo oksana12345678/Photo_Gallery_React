@@ -1,8 +1,10 @@
 import css from "./MobilSocial.module.css";
-import { PiTwitterLogoLight } from "react-icons/pi";
-import { SlSocialGoogle } from "react-icons/sl";
-import { LuFacebook } from "react-icons/lu";
-import { SlSocialLinkedin } from "react-icons/sl";
+import {
+  SlSocialTwitter,
+  SlSocialGoogle,
+  SlSocialFacebook,
+  SlSocialLinkedin,
+} from "react-icons/sl";
 
 const MobilSocial = () => {
   return (
@@ -10,7 +12,7 @@ const MobilSocial = () => {
       <ul className={css.list}>
         <li>
           <a href="#">
-            <PiTwitterLogoLight className={css.icon} />
+            <SlSocialTwitter className={css.icon} />
           </a>
         </li>
         <li>
@@ -20,7 +22,7 @@ const MobilSocial = () => {
         </li>
         <li>
           <a href="#">
-            <LuFacebook className={css.icon} />
+            <SlSocialFacebook className={css.icon} />
           </a>
         </li>
         <li>

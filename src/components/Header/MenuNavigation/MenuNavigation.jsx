@@ -5,23 +5,23 @@ const MenuNavigation = ({ toggleMenu, menuOpen }) => {
     <div>
       <ul className={css.list}>
         <li className={css.listItem}>
-          <a className={css.link} href="#">
-            About Me
+          <a className={css.link} href="#about">
+            About Us
           </a>
         </li>
         <li className={css.listItem}>
-          <a className={css.link} href="#">
+          <a className={css.link} href="#portfolio">
             Portfolio
           </a>
         </li>
         <li className={css.listItem}>
-          <a className={css.link} href="#">
+          <a className={css.link} href="#price">
             Price
           </a>
         </li>
         <li className={css.listItem}>
-          <a className={css.link} href="#">
-            Contact
+          <a className={css.link} href="#contact">
+            Get More
           </a>
         </li>
       </ul>

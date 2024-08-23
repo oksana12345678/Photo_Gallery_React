@@ -44,5 +44,27 @@
       "retouching": "30 items",
       "finish": "10 days"
     }
+  },
+  {
+    "id": 5,
+    "name": "premium",
+    "cost": "550$",
+    "description": {
+      "duration": "4 hours",
+      "photos": "85 - 90",
+      "retouching": "40 items",
+      "finish": "7 days"
+    }
+  },
+  {
+    "id": 6,
+    "name": "premium",
+    "cost": "550$",
+    "description": {
+      "duration": "4 hours",
+      "photos": "85 - 90",
+      "retouching": "40 items",
+      "finish": "7 days"
+    }
   }
 ]

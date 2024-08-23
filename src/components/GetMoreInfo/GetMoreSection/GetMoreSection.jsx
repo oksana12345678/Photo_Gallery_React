@@ -3,7 +3,7 @@ import css from "./GetMoreSection.module.css";
 
 const GetMoreSection = () => {
   return (
-    <section className={css.getMore}>
+    <section className={css.getMore} id="contact">
       <GetMoreWindow />
     </section>
   );

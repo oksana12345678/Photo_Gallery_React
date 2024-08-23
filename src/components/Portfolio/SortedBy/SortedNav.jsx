@@ -1,9 +1,11 @@
 import css from "./SortedBy.module.css";
 
 const SortedBy = ({ onSearch, swiperId }) => {
+
   const handleClick = (searchWord) => {
     onSearch(searchWord, swiperId);
   };
+  
   return (
     <div className={css.container}>
       <ul className={css.list}>

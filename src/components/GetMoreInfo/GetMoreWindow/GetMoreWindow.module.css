@@ -1,4 +1,4 @@
-/* @media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) {
   .container {
     width: 280px;
     height: 280px;
@@ -7,17 +7,15 @@
     background-color: rgb(35, 57, 66);
     top: 50%;
     left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-} */
+}
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 767px) {
   .container {
-    width: 17.5em;
-    height: 17.5em;
-    position: absolute;
-    transform: translate(-50%, -1.25em);
-    background-color: rgb(35, 57, 66);
-    top: 50%;
-    left: 50%;
+    width: 400px;
+    height: 330px;
   }
 }

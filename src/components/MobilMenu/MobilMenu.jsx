@@ -18,23 +18,23 @@ const MobilMenu = ({ menuOpen, onStateChange = () => {} }) => {
       <div className={css.blurBack}>
         <ul className={css.list}>
           <li className={css.listItem}>
-            <a onClick={onStateChange} className={css.link} href="#">
-              About Me
+            <a onClick={onStateChange} className={css.link} href="#about">
+              About Us
             </a>
           </li>
           <li className={css.listItem}>
-            <a onClick={onStateChange} className={css.link} href="#">
+            <a onClick={onStateChange} className={css.link} href="#portfolio">
               Portfolio
             </a>
           </li>
           <li className={css.listItem}>
-            <a onClick={onStateChange} className={css.link} href="#">
+            <a onClick={onStateChange} className={css.link} href="#price">
               Price
             </a>
           </li>
           <li className={css.listItem}>
-            <a onClick={onStateChange} className={css.link} href="#">
-              Contact
+            <a onClick={onStateChange} className={css.link} href="#contact">
+              Get More
             </a>
           </li>
         </ul>
