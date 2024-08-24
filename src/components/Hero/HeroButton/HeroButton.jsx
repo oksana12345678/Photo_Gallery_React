@@ -1,9 +1,11 @@
 import css from "./HeroButton.module.css";
 
-const HeroButton = () => {
+const HeroButton = ({ toggleOrderForm }) => {
   return (
     <div className={css.container}>
-      <button className={css.button}>order now</button>
+      <button className={css.button} onClick={toggleOrderForm}>
+        order now
+      </button>
     </div>
   );
 };

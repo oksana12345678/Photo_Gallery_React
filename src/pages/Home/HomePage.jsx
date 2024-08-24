@@ -11,6 +11,7 @@ import TestimonialsSection from "../../components/Testimonials/TestimonialsSecti
 import WhyMeSection from "../../components/WhyMe/WhyMeSection/WhyMeSection";
 import fetchImages from "../../components/fetchImages/fetchImages";
 import HeaderSection from "../../components/Header/HeaderSection/HeaderSection";
+import OrderWindow from "../../components/OrderNow/OrderWindow/OrderWindow";
 
 const HomePage = () => {
   const [images, setImages] = useState([]);
@@ -18,6 +19,7 @@ const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState("wedding");
   const [reviews, setReviews] = useState();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [orderOpen, setOrderOpen] = useState(false);
 
   useEffect(() => {
     const imageSearch = async () => {
@@ -49,12 +51,16 @@ const HomePage = () => {
     setMenuOpen(state.isOpen);
   };
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setOrderOpen(false);
+  };
+
+  const toggleOrderForm = () => {
+    setOrderOpen(!orderOpen);
   };
 
   return (
@@ -63,11 +69,14 @@ const HomePage = () => {
         toggleMenu={toggleMenu}
         menuOpen={menuOpen}
         onStateChange={handleStateChange}
-        closeMenu={closeMenu}
       />
 
       <MainContainer>
-        <HeroSection />
+        <HeroSection
+          orderOpen={orderOpen}
+          close={closeMenu}
+          toggleOrderForm={toggleOrderForm}
+        />
         <AboutUsSection items={images} />
 
         <PortfolioSection />
@@ -78,6 +87,7 @@ const HomePage = () => {
         <GetMoreSection />
       </MainContainer>
       <FooterSection />
+      <OrderWindow />
     </>
   );
 };

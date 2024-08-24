@@ -1,0 +1,57 @@
+.container {
+  display: none;
+}
+.open {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background: linear-gradient(to right, #233942 50%, #0d0f11 50%);
+}
+
+.calendarContainer {
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  backdrop-filter: blur(30px);
+  align-items: center;
+  padding: 24px;
+  gap: 16px;
+}
+
+.title {
+  color: rgb(255, 255, 255);
+  font-family: Cormorant;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+
+.available {
+  background-color: #1e69f5;
+  color: rgb(23, 24, 24);
+}
+
+.unavailable {
+  background-color: #e01e1e;
+  color: #ea9d9d;
+}
+
+.closeButton {
+  background-color: transparent;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid aliceblue;
+  border-radius: 100%;
+}
+
+.icon {
+  color: aliceblue;
+}

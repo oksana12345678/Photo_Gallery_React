@@ -1,0 +1,25 @@
+@media screen and (min-width: 320px) {
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out,
+      visibility 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 1110;
+    backdrop-filter: blur(3em);
+  }
+  .container.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.5s ease-in-out;
+  }
+}
+@media screen and (min-width: 767px) {
+}

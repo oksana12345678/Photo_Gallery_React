@@ -1,4 +1,4 @@
-/* @media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) {
   .list {
     display: flex;
     list-style: none;
@@ -32,43 +32,5 @@
   .listItem {
     width: 400px;
     padding: 40px;
-  }
-} */
-
-@media screen and (min-width: 320px) {
-  .list {
-    display: flex;
-    list-style: none;
-    padding: 2.5em 0;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-  }
-
-  .list .listItem {
-    width: 16.25em;
-    padding: 1.5em;
-    backdrop-filter: blur(0.625em);
-    background: rgba(95, 93, 93, 0.12);
-    border-radius: 0.25em;
-    transition: border 0.3s ease;
-  }
-  .listItem:hover {
-    box-shadow: 0px 0.25em 0.125em rgba(129, 131, 158, 0.08),
-      0px 0.125em 0.125em rgba(46, 47, 66, 0.16),
-      0px 0.125em 0.5em rgba(135, 136, 167, 0.08);
-    border: 0.25em solid rgb(35, 57, 66);
-    border-radius: 0.25em;
-  }
-}
-@media screen and (min-width: 768px) {
-  .list {
-    display: flex;
-    list-style: none;
-    padding: 3.75em 0;
-  }
-  .listItem {
-    width: 25em;
-    padding: 2.5em;
   }
 }
