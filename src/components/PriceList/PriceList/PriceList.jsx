@@ -4,7 +4,7 @@ import css from "./PriceList.module.css";
 import { Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 
-const PriceList = () => {
+const PriceList = ({ toggleCalendar }) => {
   const allPrice = price;
   return (
     <>
@@ -49,6 +49,7 @@ const PriceList = () => {
                 photos={photos}
                 retouching={retouching}
                 finish={finish}
+                toggleCalendar={toggleCalendar}
               />
             </SwiperSlide>
           )

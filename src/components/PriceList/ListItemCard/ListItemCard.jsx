@@ -1,17 +1,14 @@
-import { useState } from "react";
 import css from "./ListItemCrd.module.css";
-import SessionSchedule from "../SessionSchedule/SessionSchedule";
 
-const ListItemCard = ({ name, cost, duration, photos, retouching, finish }) => {
-  const [showCalendar, setShowCalendar] = useState(false);
-
-  const toggleCalendar = () => {
-    setShowCalendar((prev) => !prev);
-  };
-  const closeCalendar = () => {
-    setShowCalendar(false);
-  };
-
+const ListItemCard = ({
+  name,
+  cost,
+  duration,
+  photos,
+  retouching,
+  finish,
+  toggleCalendar,
+}) => {
   return (
     <div className={css.mainContainer}>
       <div className={css.titleContainer}>
@@ -39,7 +36,6 @@ const ListItemCard = ({ name, cost, duration, photos, retouching, finish }) => {
       <button className={css.button} type="button" onClick={toggleCalendar}>
         Photo Session Schedule
       </button>
-      <SessionSchedule showCalendar={showCalendar} onClose={closeCalendar} />
     </div>
   );
 };
