@@ -12,20 +12,23 @@ import { Link } from "react-router-dom";
 const PhotoGallery = () => {
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(null);
+
   const [searchTerm, setSearchTerm] = useState("all");
+  const perPage = 6;
 
   useEffect(() => {
     const itemSearch = async () => {
       try {
-        const data = await fetchImages(searchTerm);
+        const data = await fetchImages(searchTerm, page, perPage);
+
         setItems(data.results);
       } catch (error) {
         setError(true);
       }
     };
     itemSearch();
-  }, [setItems, searchTerm]);
-
+  }, [setItems, searchTerm, page]);
 
   return (
     <div>

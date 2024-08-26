@@ -3,7 +3,7 @@ import axios from "axios";
 const ACCESS_KEY = "_53SPA543-Ouwekulccwys4bavGPErzn8O6UOPMC_rc";
 axios.defaults.baseURL = "https://api.unsplash.com";
 
-const fetchImages = async (searchQuery, page) => {
+const fetchImages = async (searchQuery, page, per_page) => {
   try {
     const response = await axios.get(
       `/search/photos?page=1&query=${searchQuery}`,
@@ -11,7 +11,7 @@ const fetchImages = async (searchQuery, page) => {
         params: {
           query: searchQuery,
           page: page,
-          per_page: 9,
+          per_page: per_page,
         },
         headers: {
           Authorization: `Client-ID ${ACCESS_KEY}`,

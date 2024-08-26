@@ -4,19 +4,18 @@
   }
   .slides {
     display: grid;
-    grid: repeat(3, 100px) / auto-flow;
-    gap: 4px;
+    grid: repeat(3, 140px) / auto-flow;
+    gap: 16px;
     list-style: none;
     padding: 0;
     margin: 0;
-    justify-items: center;
     align-items: center;
     justify-content: center;
-    align-content: center;
   }
+
   .listItem {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
   }
 
   .listItem:hover {

@@ -12,7 +12,7 @@ const SessionSchedule = ({ showCalendar, onClose }) => {
   useEffect(() => {
     const fetchAvailableDates = async () => {
       try {
-        const response = await fetch("../../../../availableDates.json");
+        const response = await fetch("/availableDates.json");
         const data = await response.json();
         setAvailableDates(data.dates);
       } catch (error) {
