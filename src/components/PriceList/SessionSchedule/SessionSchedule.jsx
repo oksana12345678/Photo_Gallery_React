@@ -6,22 +6,13 @@ import "react-calendar/dist/Calendar.css";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 const SessionSchedule = ({ showCalendar, onClose }) => {
-  const [availableDates, setAvailableDates] = useState([]);
+  const [availableDates, setAvailableDates] = useState([
+    "2024-09-20",
+    "2024-09-23",
+    "2024-09-02",
+    "2024-08-29",
+  ]); // Дати тепер передаються тут, без запиту
   const calendarRef = useRef(null);
-
-  useEffect(() => {
-    const fetchAvailableDates = async () => {
-      try {
-        const response = await fetch("/availableDates.json");
-        const data = await response.json();
-        setAvailableDates(data.dates);
-      } catch (error) {
-        console.error("Error loading data:", error);
-      }
-    };
-
-    fetchAvailableDates();
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -41,6 +32,7 @@ const SessionSchedule = ({ showCalendar, onClose }) => {
     const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1)
       .toString()
       .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}`;
+
     return availableDates.includes(formattedDate);
   };
 
