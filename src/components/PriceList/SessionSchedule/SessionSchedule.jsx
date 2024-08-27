@@ -11,7 +11,7 @@ const SessionSchedule = ({ showCalendar, onClose }) => {
     "2024-09-23",
     "2024-09-02",
     "2024-08-29",
-  ]); // Дати тепер передаються тут, без запиту
+  ]);
   const calendarRef = useRef(null);
 
   useEffect(() => {
