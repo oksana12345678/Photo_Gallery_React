@@ -19,8 +19,8 @@ const MorePhotos = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImages, setSelectedImages] = useState("");
   const [endOfCollection, setEndOfCollection] = useState(false);
-  const [hasLoadedImages, setHasLoadedImages] = useState(false);
-  const [totalCollection, setTotalCollection] = useState({});
+  const [hasLoadedImages] = useState(false);
+  const [totalCollection] = useState({});
   const [totalImages, setTotalImages] = useState(0);
 
   const handleOpenModal = (imageUrl) => {
@@ -36,7 +36,7 @@ const MorePhotos = () => {
     const imageSearch = async () => {
       try {
         setError(false);
-        const data = await fetchImages(searchTerm);
+        const data = await fetchImages(searchTerm, page, 12);
         setImages(data.results);
       } catch (error) {
         setError(true);
@@ -47,7 +47,7 @@ const MorePhotos = () => {
 
   useEffect(() => {
     const fetchTotalImages = async () => {
-      const total = Math.ceil(totalCollection / 15);
+      const total = Math.ceil(totalCollection / 12);
       setTotalImages(total);
     };
     fetchTotalImages();
@@ -64,7 +64,7 @@ const MorePhotos = () => {
   const handleLoadMore = async () => {
     try {
       setLoading(true);
-      const nextPageData = await fetchImages(searchTerm, page + 1);
+      const nextPageData = await fetchImages(searchTerm, page + 1, 8);
       setPage((prevPage) => prevPage + 1);
       setImages((prevImages) => [...prevImages, ...nextPageData.results]);
     } catch (error) {

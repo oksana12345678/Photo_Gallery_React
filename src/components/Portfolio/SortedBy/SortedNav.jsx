@@ -1,41 +1,33 @@
+import { useState } from "react";
 import css from "./SortedBy.module.css";
+import filters from "./data.json";
 
 const SortedBy = ({ onSearch, swiperId }) => {
+  const [activeFilter, setActiveFilter] = useState("all");
 
   const handleClick = (searchWord) => {
+    setActiveFilter(searchWord);
     onSearch(searchWord, swiperId);
   };
-  
+
   return (
     <div className={css.container}>
       <ul className={css.list}>
-        <li className={css.listItem}>
-          <button className={css.button} onClick={() => handleClick("all")}>
-            all
-          </button>
-        </li>
-        <li className={css.listItem}>
-          <button className={css.button} onClick={() => handleClick("wedding")}>
-            wedding
-          </button>
-        </li>
-        <li className={css.listItem}>
-          <button className={css.button} onClick={() => handleClick("product")}>
-            product
-          </button>
-        </li>
-        <li className={css.listItem}>
-          <button className={css.button} onClick={() => handleClick("food")}>
-            food
-          </button>
-        </li>
-        <li className={css.listItem}>
-          <button className={css.button} onClick={() => handleClick("fashion")}>
-            fashion
-          </button>
-        </li>
+        {filters.map((filter) => (
+          <li className={css.listItem} key={filter}>
+            <button
+              className={`${css.button} ${
+                activeFilter === filter ? css.active : ""
+              }`}
+              onClick={() => handleClick(filter)}
+            >
+              {filter}
+            </button>
+          </li>
+        ))}
       </ul>
     </div>
   );
 };
+
 export default SortedBy;
