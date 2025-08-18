@@ -43,7 +43,7 @@ const MorePhotos = () => {
       }
     };
     imageSearch();
-  }, [setImages, searchTerm]);
+  }, [setImages, searchTerm, page]);
 
   useEffect(() => {
     const fetchTotalImages = async () => {
