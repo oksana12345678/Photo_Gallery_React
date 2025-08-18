@@ -1,0 +1,26 @@
+{
+  "main_title": "why me",
+  "main_desc": "Tincidunt sagittis mollis nec suspendisse sed felis massa urna nec. Urna quisque blandit turpis ultrices arcu ut sed.",
+  "list": [
+    {
+      "title": "agency",
+      "desc": "Sagittis enim nullam pulvinar tellus sit egestas semper. Vestibulum sed libero sed at sed nisl sodales phasellus et."
+    },
+    {
+      "title": "choose idea",
+      "desc": "Sagittis enim nullam pulvinar tellus sit egestas semper. Vestibulum sed libero sed at sed nisl sodales phasellus et."
+    },
+    {
+      "title": "satisfaction",
+      "desc": "Sagittis enim nullam pulvinar tellus sit egestas semper. Vestibulum sed libero sed at sed nisl sodales phasellus et."
+    },
+    {
+      "title": "quality",
+      "desc": "Sagittis enim nullam pulvinar tellus sit egestas semper. Vestibulum sed libero sed at sed nisl sodales phasellus et."
+    },
+    {
+      "title": "creativity",
+      "desc": "Sagittis enim nullam pulvinar tellus sit egestas semper. Vestibulum sed libero sed at sed nisl sodales phasellus et."
+    }
+  ]
+}
