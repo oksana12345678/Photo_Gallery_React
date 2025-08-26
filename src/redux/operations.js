@@ -2,7 +2,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { handleError } from "./service/apiErrorHandler";
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "https://photo-graphy-backend.onrender.com";
+//http://localhost:3000
 
 export const postBooking = createAsyncThunk(
   "booking/post",
