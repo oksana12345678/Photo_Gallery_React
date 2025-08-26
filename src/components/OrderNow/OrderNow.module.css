@@ -44,7 +44,7 @@
     flex-direction: column;
   }
   .title {
-    padding: 18px 0;
+    padding: 12px 0;
     text-align: center;
     color: rgb(255, 255, 255);
     font-family: Lato;
@@ -59,7 +59,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
   }
   .inputContainer {
     display: flex;
