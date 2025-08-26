@@ -9,7 +9,6 @@ const fetchImages = async (searchQuery, page, per_page) => {
       `/search/photos?page=1&query=${searchQuery}`,
       {
         params: {
-          query: searchQuery,
           page: page,
           per_page: per_page,
         },
