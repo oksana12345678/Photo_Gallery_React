@@ -16,14 +16,11 @@
 }
 
 .calendarContainer {
-  max-width: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  padding: 24px;
-  gap: 16px;
 }
 
 .title {
@@ -37,7 +34,7 @@
 
 .available {
   background-color: #1e69f5;
-  color: rgb(23, 24, 24);
+  color: #1e69f5;
 }
 
 .unavailable {

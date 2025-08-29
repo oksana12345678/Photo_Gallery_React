@@ -1,0 +1,59 @@
+.calendarWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar {
+  height: 400px;
+  width: 100%;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 8px;
+}
+
+.next,
+.prev {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 42px;
+  cursor: pointer;
+}
+
+.monthName {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.freeHoursWrapper {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 18px 0 0 0;
+}
+
+.hourButton {
+  padding: 4px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #eee;
+  font-size: 22px;
+}
+
+@media screen and (min-width: 768px) {
+  .calendar {
+    width: 100%;
+  }
+}

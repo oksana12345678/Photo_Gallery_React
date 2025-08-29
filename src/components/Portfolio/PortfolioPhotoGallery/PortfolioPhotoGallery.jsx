@@ -21,7 +21,7 @@ const PhotoGallery = () => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setPerPage(6);
-      } else {
+      } else if (window.innerWidth > 769 && window.innerWidth < 1280) {
         setPerPage(9);
       }
     };

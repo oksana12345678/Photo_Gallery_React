@@ -1,7 +1,9 @@
 @media screen and (min-width: 320px) {
   .whyMe {
     padding: 0 16px;
+    position: relative;
   }
+
   .whyMe {
     padding-bottom: 80px;
   }

@@ -1,17 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import css from "./SessionSchedule.module.css";
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { RiCloseLargeFill } from "react-icons/ri";
+import OrderNow from "../../OrderNow/OrderNow";
 
 const SessionSchedule = ({ showCalendar, onClose }) => {
-  const [availableDates, setAvailableDates] = useState([
-    "2024-09-20",
-    "2024-09-23",
-    "2024-09-02",
-    "2024-08-29",
-  ]);
   const calendarRef = useRef(null);
 
   useEffect(() => {
@@ -28,33 +21,10 @@ const SessionSchedule = ({ showCalendar, onClose }) => {
     };
   }, [onClose]);
 
-  const isDateAvailable = (date) => {
-    const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1)
-      .toString()
-      .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}`;
-
-    return availableDates.includes(formattedDate);
-  };
-
-  const tileClassName = ({ date, view }) => {
-    if (view === "month") {
-      return isDateAvailable(date) ? css.available : css.unavailable;
-    }
-    return null;
-  };
-
   return (
     <div className={`${css.container} ${showCalendar ? css.open : ""}`}>
       <div className={css.calendarContainer} ref={calendarRef}>
-        <button className={css.closeButton} onClick={onClose}>
-          <RiCloseLargeFill className={css.icon} />
-        </button>
-        <h2 className={css.title}>Available dates for photo sessions</h2>
-        <Calendar
-          tileClassName={tileClassName}
-          view="month"
-          showNeighboringMonth={false}
-        />
+        <OrderNow close={onClose} />
       </div>
     </div>
   );

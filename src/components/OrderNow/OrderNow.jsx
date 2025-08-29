@@ -3,20 +3,18 @@ import * as Yup from "yup";
 import css from "./OrderNow.module.css";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
-import { postBooking } from "../../redux/operations";
+import { postBooking } from "../../redux/booking/operations";
 import showToast from "../showToast";
-import { errorSelector } from "../../redux/selectors";
+import { dateSelector, errorSelector } from "../../redux/booking/selectors";
+import CalendarDate from "../commons/CalendarDate/CalendarDate";
+import { useState } from "react";
+import moment from "moment";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required!"),
   email: Yup.string().email("Incorrect email").required("Email is required!"),
   number: Yup.string().required("Phone number is required"),
   sessionType: Yup.string().required("Choose photo session type!"),
-  date: Yup.date().required("Date is required"),
-  time: Yup.string()
-    .matches(/^([0-1]\d|2[0-3]):([0-5]\d)$/, "Enter valid time (HH:mm)")
-    .required("Time is required"),
-  location: Yup.string().required("The location is required!"),
 });
 
 const initialValues = {
@@ -31,19 +29,44 @@ const initialValues = {
 };
 const OrderNow = ({ close }) => {
   const dispatch = useDispatch();
+
+  const [hour, setHour] = useState("");
+  const [day, setDay] = useState("");
   const sendError = useSelector(errorSelector);
+  const datesSelector = useSelector(dateSelector);
+
+  const formattedDay = day
+    ? moment(day).utcOffset(0, true).format("YYYY-MM-DDTHH:mm:ss.SSSZ")
+    : "";
+
+  console.log(formattedDay);
+  const availableDates = datesSelector.map((item) => {
+    const d = new Date(item.date);
+    const freeHours = item.time.filter((t) => t.booked === false);
+
+    return {
+      date: `${d.getFullYear()}-${(d.getMonth() + 1)
+        .toString()
+        .padStart(2, "0")}-${d.getDate().toString().padStart(2, "0")}`,
+      freeHours: freeHours.map((t) => t.hour),
+    };
+  });
 
   const handleSubmit = (values, action) => {
-    const { name, email, number, sessionType, date, location, message, time } =
-      values;
+    if (!day || !hour) {
+      showToast("Please select date and time", "error");
+      return;
+    }
+
+    const { name, email, number, sessionType, location, message } = values;
 
     const bookingData = {
       name,
       email,
       phone: number,
       photoSessions: sessionType,
-      sessionDate: date,
-      time,
+      sessionDate: formattedDay,
+      time: hour,
       location,
       comment: message,
     };
@@ -66,6 +89,12 @@ const OrderNow = ({ close }) => {
           <RiCloseLargeFill className={css.icon} />
         </button>
         <h2 className={css.title}>Book a photo session</h2>
+        <CalendarDate
+          booked={availableDates}
+          setHour={setHour}
+          setDay={setDay}
+        />
+
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -135,40 +164,6 @@ const OrderNow = ({ close }) => {
               </div>
 
               <div className={css.inputContainer}>
-                <label>Photo session date </label>
-                <Field className={css.input} type="date" name="date" />
-                <ErrorMessage
-                  name="date"
-                  className={css.error}
-                  component={"span"}
-                />
-              </div>
-              <div className={css.inputContainer}>
-                <label>Photo session time </label>
-                <Field className={css.input} type="time" name="time" />
-                <ErrorMessage
-                  name="time"
-                  className={css.error}
-                  component={"span"}
-                />
-              </div>
-
-              <div className={css.inputContainer}>
-                <label>Location of the photo session</label>
-                <Field
-                  className={css.input}
-                  type="text"
-                  name="location"
-                  placeholder="Add location"
-                />
-                <ErrorMessage
-                  name="location"
-                  className={css.error}
-                  component={"span"}
-                />
-              </div>
-
-              <div className={css.inputContainer}>
                 <label>Additional wishes</label>
                 <Field
                   className={css.inputTextArea}
@@ -178,7 +173,7 @@ const OrderNow = ({ close }) => {
                 />
               </div>
               <button className={css.buttonSubmit} type="submit">
-                Send
+                Book
               </button>
             </div>
           </Form>
