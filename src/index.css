@@ -28,11 +28,11 @@ ul {
 
 .dayFree {
   cursor: pointer;
-  background-color: #09234e;
+  background-color: #09234e !important;
 }
 
 .dayBooked {
-  color: red;
+  color: red !important;
   cursor: not-allowed;
   background-color: transparent;
 }
