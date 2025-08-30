@@ -50,6 +50,18 @@ const CalendarDate = ({ booked, setHour, setDay }) => {
             });
           else setSelectedDate(null);
         }}
+        onDrillDown={(date) => {
+          setDay(date);
+          const hours = isFree(date);
+          if (hours) {
+            setSelectedDate({
+              date: moment(date).format("YYYY-MM-DD"),
+              freeHours: hours,
+            });
+          } else {
+            setSelectedDate(null);
+          }
+        }}
         dayPropGetter={(date) => {
           const todayStr = moment().format("YYYY-MM-DD");
           const dateStr = moment(date).format("YYYY-MM-DD");
