@@ -15,20 +15,20 @@ const PhotoGallery = () => {
   const [page] = useState(null);
   const [searchTerm, setSearchTerm] = useState("all");
 
-  const [perPage, setPerPage] = useState(6);
+  const [perPage, setPerPage] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1280) {
         setPerPage(6);
-      } else if (window.innerWidth > 769 && window.innerWidth < 1280) {
+      } else if (window.innerWidth > 1280) {
         setPerPage(9);
       }
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
 
+    window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 

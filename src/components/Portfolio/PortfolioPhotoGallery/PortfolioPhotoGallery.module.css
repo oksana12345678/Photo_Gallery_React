@@ -2,6 +2,7 @@
   .container {
     position: relative;
   }
+
   .slides {
     display: grid;
     grid: repeat(3, 140px) / auto-flow;
@@ -96,6 +97,18 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .slides {
+    grid: repeat(2, 220px) / auto-flow;
+    gap: 24px;
+  }
+
+  .listItem {
+    width: 260px;
+    height: 220px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .slides {
     grid: repeat(3, 240px) / auto-flow;
     gap: 16px;
