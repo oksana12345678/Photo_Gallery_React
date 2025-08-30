@@ -19,6 +19,7 @@
     opacity: 1;
     visibility: visible;
     transition: transform 0.5s ease-in-out;
+    overflow: auto;
   }
 }
 @media screen and (min-width: 767px) {
