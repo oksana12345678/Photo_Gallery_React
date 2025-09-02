@@ -12,9 +12,9 @@ import moment from "moment";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required!"),
-  email: Yup.string().email("Incorrect email").required("Email is required!"),
-  number: Yup.string().required("Phone number is required"),
-  sessionType: Yup.string().required("Choose photo session type!"),
+  email: Yup.string().email("Incorrect email!").required("Email is required!"),
+  number: Yup.string().required("Phone number is required!"),
+  sessionType: Yup.string().required("Type og photo session required!"),
 });
 
 const initialValues = {
@@ -34,12 +34,12 @@ const OrderNow = ({ close }) => {
   const [day, setDay] = useState("");
   const sendError = useSelector(errorSelector);
   const datesSelector = useSelector(dateSelector);
+  const [isOther, setIsOther] = useState(false);
 
   const formattedDay = day
     ? moment(day).utcOffset(0, true).format("YYYY-MM-DDTHH:mm:ss.SSSZ")
     : "";
 
-  console.log(formattedDay);
   const availableDates = datesSelector.map((item) => {
     const d = new Date(item.date);
     const freeHours = item.time.filter((t) => t.booked === false);
@@ -58,13 +58,18 @@ const OrderNow = ({ close }) => {
       return;
     }
 
-    const { name, email, number, sessionType, location, message } = values;
+    const { name, email, number, sessionType, location, message, otherType } =
+      values;
 
     const bookingData = {
       name,
       email,
       phone: number,
-      photoSessions: sessionType,
+      photoSessions: sessionType
+        ? sessionType === "other"
+          ? otherType
+          : sessionType
+        : otherType,
       sessionDate: formattedDay,
       time: hour,
       location,
@@ -93,91 +98,114 @@ const OrderNow = ({ close }) => {
           booked={availableDates}
           setHour={setHour}
           setDay={setDay}
+          selectedHour={hour}
         />
+        {hour && (
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
+          >
+            {({ setFieldValue }) => (
+              <Form className={css.form}>
+                <div className={css.container}>
+                  <div className={css.inputContainer}>
+                    <label>Name</label>
+                    <Field
+                      className={css.input}
+                      type="text"
+                      name="name"
+                      placeholder="John Dow"
+                    />
+                    <ErrorMessage
+                      name="name"
+                      className={css.error}
+                      component={"span"}
+                    />
+                  </div>
+                  <div className={css.inputContainer}>
+                    <label>Email </label>
+                    <Field
+                      className={css.input}
+                      type="email"
+                      name="email"
+                      placeholder="example@gmail.com"
+                    />
 
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
-          <Form className={css.form}>
-            <div className={css.container}>
-              <div className={css.inputContainer}>
-                <label>Name</label>
-                <Field
-                  className={css.input}
-                  type="text"
-                  name="name"
-                  placeholder="John Dow"
-                />
-                <ErrorMessage
-                  name="name"
-                  className={css.error}
-                  component={"span"}
-                />
-              </div>
-              <div className={css.inputContainer}>
-                <label>Email </label>
-                <Field
-                  className={css.input}
-                  type="email"
-                  name="email"
-                  placeholder="example@gmail.com"
-                />
+                    <ErrorMessage
+                      name="email"
+                      className={css.error}
+                      component={"span"}
+                    />
+                  </div>
+                  <div className={css.inputContainer}>
+                    <label>Phone</label>
+                    <Field
+                      className={css.input}
+                      type="tel"
+                      name="number"
+                      placeholder="XXXXXXXXXX"
+                    />
 
-                <ErrorMessage
-                  name="email"
-                  className={css.error}
-                  component={"span"}
-                />
-              </div>
-              <div className={css.inputContainer}>
-                <label>Phone</label>
-                <Field
-                  className={css.input}
-                  type="tel"
-                  name="number"
-                  placeholder="XXXXXXXXXX"
-                />
+                    <ErrorMessage
+                      name="number"
+                      className={css.error}
+                      component={"span"}
+                    />
+                  </div>
+                  <div className={css.inputContainer}>
+                    <label>Type og photo session</label>
+                    <Field
+                      as="select"
+                      name="sessionType"
+                      className={css.input}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        setIsOther(value === "other");
+                        setFieldValue("sessionType", value);
+                      }}
+                    >
+                      <option value="" disabled hidden>
+                        Choose a type
+                      </option>
+                      <option value="wedding">Wedding photo session</option>
+                      <option value="portrait">Portrait photo session</option>
+                      <option value="family">Family photo session</option>
+                      <option value="event">Shooting events</option>
+                      <option value="other">Other</option>
+                    </Field>
+                    {isOther && (
+                      <Field
+                        type="text"
+                        name="otherType"
+                        placeholder="Enter your own type"
+                        className={css.input}
+                      />
+                    )}
+                    <ErrorMessage
+                      name="sessionType"
+                      className={css.error}
+                      component={"span"}
+                    />
+                  </div>
 
-                <ErrorMessage
-                  name="number"
-                  className={css.error}
-                  component={"span"}
-                />
-              </div>
-              <div className={css.inputContainer}>
-                <label>Type og photo session</label>
-                <Field as="select" name="sessionType" className={css.input}>
-                  <option value="">Choose a type</option>
-                  <option value="wedding">Wedding photo session</option>
-                  <option value="portrait">Portrait photo session</option>
-                  <option value="family">Family photo session</option>
-                  <option value="event">Shooting events</option>
-                  <option value="other">Other</option>
-                </Field>
-                <ErrorMessage
-                  name="sessionType"
-                  className={css.error}
-                  component={"span"}
-                />
-              </div>
-
-              <div className={css.inputContainer}>
-                <label>Additional wishes</label>
-                <Field
-                  className={css.inputTextArea}
-                  as="textarea"
-                  name="message"
-                  placeholder="Your wishes"
-                />
-              </div>
-              <button className={css.buttonSubmit} type="submit">
-                Book
-              </button>
-            </div>
-          </Form>
-        </Formik>
+                  <div className={css.inputContainer}>
+                    <label>Additional wishes</label>
+                    <Field
+                      className={css.inputTextArea}
+                      as="textarea"
+                      name="message"
+                      placeholder="Your wishes"
+                    />
+                  </div>
+                  <button className={css.buttonSubmit} type="submit">
+                    Book
+                  </button>
+                </div>
+              </Form>
+            )}
+          </Formik>
+        )}{" "}
       </div>
     </div>
   );

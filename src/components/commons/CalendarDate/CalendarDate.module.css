@@ -50,15 +50,16 @@
   cursor: pointer;
   background-color: #eee;
   font-size: 22px;
+  transition: var(--base-transition);
 }
 
 .hourButton:hover {
-  background-color: #b00d0d;
+  background-color: var(--base-color-hover);
   color: white;
 }
 
 .active {
-  background-color: #111010;
+  background-color: rgb(252, 248, 239, 0.1);
   color: white;
 }
 

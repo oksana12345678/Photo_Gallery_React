@@ -6,7 +6,7 @@ import css from "./CalendarDate.module.css";
 import MyToolbar from "./Toolbar";
 const localizer = momentLocalizer(moment);
 
-const CalendarDate = ({ booked, setHour, setDay }) => {
+const CalendarDate = ({ booked, setHour, setDay, selectedHour }) => {
   const [selectedDate, setSelectedDate] = useState(null);
 
   const bookedMap = new Map(
@@ -22,7 +22,11 @@ const CalendarDate = ({ booked, setHour, setDay }) => {
   };
 
   const handleClickOnHourButton = (hour) => {
-    setHour(hour);
+    if (selectedHour === hour) {
+      setHour(null);
+    } else {
+      setHour(hour);
+    }
   };
 
   return (
@@ -80,7 +84,7 @@ const CalendarDate = ({ booked, setHour, setDay }) => {
               <button
                 key={hour}
                 className={`${css.hourButton}  ${
-                  selectedDate === hour ? css.active : ""
+                  selectedHour === hour ? css.active : ""
                 }`}
                 onClick={() => handleClickOnHourButton(hour)}
               >

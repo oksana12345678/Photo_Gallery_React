@@ -3,6 +3,9 @@
   max-width: 1440px;
   margin: 0 auto;
   --base-gradient: linear-gradient(to right, #375865 50%, #1b1f23 50%);
+
+  --base-transition: all 0.5s ease;
+  --base-color-hover: #759bab5e;
 }
 body {
   background: rgb(13, 15, 17);
@@ -28,11 +31,15 @@ ul {
 
 .dayFree {
   cursor: pointer;
-  background-color: #09234e !important;
+  background-color: #09234e;
+  transition: var(--base-transition);
+}
+.dayFree:hover {
+  background-color: var(--base-color-hover);
 }
 
 .dayBooked {
-  color: red !important;
+  color: red;
   cursor: not-allowed;
   background-color: transparent;
 }
