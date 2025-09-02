@@ -11,7 +11,7 @@ const CalendarDate = ({ booked, setHour, setDay }) => {
 
   const bookedMap = new Map(
     booked.map((item) => [
-      moment(item.date).format("YYYY-MM-DD"),
+      moment(item.date, moment.ISO_8601).format("YYYY-MM-DD"),
       item.freeHours,
     ])
   );
@@ -79,7 +79,9 @@ const CalendarDate = ({ booked, setHour, setDay }) => {
             {selectedDate.freeHours.map((hour) => (
               <button
                 key={hour}
-                className={css.hourButton}
+                className={`${css.hourButton}  ${
+                  selectedDate === hour ? css.active : ""
+                }`}
                 onClick={() => handleClickOnHourButton(hour)}
               >
                 {hour}

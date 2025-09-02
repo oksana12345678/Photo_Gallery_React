@@ -3,7 +3,7 @@ import axios from "axios";
 import { handleError } from "../service/apiErrorHandler";
 
 //http://localhost:3000
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "https://photo-graphy-backend.onrender.com";
 //https://photo-graphy-backend.onrender.com
 export const postBooking = createAsyncThunk(
   "booking/post",

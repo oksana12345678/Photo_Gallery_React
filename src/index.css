@@ -57,3 +57,7 @@ ul {
   color: rgb(209, 209, 209);
   font-size: 20px;
 }
+
+a.rbc-button-link {
+  pointer-events: none;
+}
